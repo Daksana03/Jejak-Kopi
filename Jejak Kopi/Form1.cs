@@ -1,4 +1,5 @@
 using Jejak_Kopi.Database;
+using System.Drawing.Text;
 
 namespace Jejak_Kopi
 {
@@ -30,18 +31,26 @@ namespace Jejak_Kopi
             string inpass = Password.Text;
             DatabaseHelper dbHelper = new DatabaseHelper();
             List<User> users = dbHelper.GetAllUsers();
+            bool status = false;
+            int id_current;
 
             foreach (User user in users)
             {
-            //MessageBox.Show(user.username);
                 if (inusern == user.username && inpass == user.password)
                 {
                     MessageBox.Show("Berhasil");
+                    status = true;
+                    id_current = user.id;
                 }
-                //else
-                //{
-                //    MessageBox.Show("Salah woyy");
-                //}
+            }
+
+            if (status)
+            {
+                //lanjut ke form selanjutnya
+            }
+            else
+            {
+                MessageBox.Show("Username atau Passwords Salah!!", "Login gagal");
             }
         }
     }
