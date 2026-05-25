@@ -5,14 +5,9 @@ namespace Jejak_Kopi
 {
     public partial class Form1 : Form
     {
-        string testuser;
-        string testpass;
-        List<User> users;
         public Form1()
         {
             InitializeComponent();
-            testuser = "rafif";
-            testpass = "123";
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -32,6 +27,7 @@ namespace Jejak_Kopi
             DatabaseHelper dbHelper = new DatabaseHelper();
             List<User> users = dbHelper.GetAllUsers();
             bool status = false;
+            bool is_admin = false;
             int id_current;
 
             foreach (User user in users)
@@ -40,13 +36,20 @@ namespace Jejak_Kopi
                 {
                     MessageBox.Show("Berhasil");
                     status = true;
+                    is_admin = user.is_admin;
                     id_current = user.id;
                 }
             }
 
-            if (status)
+            if (status && is_admin)
             {
-                //lanjut ke form selanjutnya
+                Form3 mainDashboard = new Form3(inusern);
+                mainDashboard.Show();
+                this.Hide();
+            }
+            else if (status && is_admin == false)
+            {
+                
             }
             else
             {

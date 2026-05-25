@@ -10,9 +10,11 @@ namespace Jejak_Kopi
 {
     public partial class Form3 : Form
     {
-        public Form3()
+        public Form3(string adminName)
         {
             InitializeComponent();
+            label2.Text = adminName;
+            label4.Text = adminName;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -33,6 +35,16 @@ namespace Jejak_Kopi
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Logout_btn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
