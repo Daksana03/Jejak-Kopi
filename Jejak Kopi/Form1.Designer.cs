@@ -169,10 +169,10 @@
 
         #endregion
         private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox Username;
+        private TextBox Password;
         private Label label4;
-        private Button button1;
+        private Button Login1;
         private Button button2;
         private PictureBox pictureBox1;
         private Label label5;
