@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             label2 = new Label();
-            this.Username = new TextBox();
-            this.Password = new TextBox();
+            Username = new TextBox();
+            Password = new TextBox();
             label4 = new Label();
-            this.Login1 = new Button();
+            Login1 = new Button();
             pictureBox1 = new PictureBox();
             label5 = new Label();
             label6 = new Label();
@@ -55,17 +55,17 @@
             // 
             // Username
             // 
-            this.Username.Location = new Point(37, 193);
-            this.Username.Name = "Username";
-            this.Username.Size = new Size(277, 27);
-            this.Username.TabIndex = 3;
+            Username.Location = new Point(37, 193);
+            Username.Name = "Username";
+            Username.Size = new Size(277, 27);
+            Username.TabIndex = 3;
             // 
             // Password
             // 
-            this.Password.Location = new Point(37, 264);
-            this.Password.Name = "Password";
-            this.Password.Size = new Size(277, 27);
-            this.Password.TabIndex = 4;
+            Password.Location = new Point(37, 264);
+            Password.Name = "Password";
+            Password.Size = new Size(277, 27);
+            Password.TabIndex = 4;
             // 
             // label4
             // 
@@ -79,16 +79,17 @@
             // 
             // Login1
             // 
-            this.Login1.BackgroundImage = (Image)resources.GetObject("Login1.BackgroundImage");
-            this.Login1.BackgroundImageLayout = ImageLayout.Stretch;
-            this.Login1.Font = new Font("Times New Roman", 9F);
-            this.Login1.ForeColor = SystemColors.ControlLightLight;
-            this.Login1.Location = new Point(234, 364);
-            this.Login1.Name = "Login1";
-            this.Login1.Size = new Size(94, 29);
-            this.Login1.TabIndex = 8;
-            this.Login1.Text = "Login";
-            this.Login1.UseVisualStyleBackColor = true;
+            Login1.BackgroundImage = (Image)resources.GetObject("Login1.BackgroundImage");
+            Login1.BackgroundImageLayout = ImageLayout.Stretch;
+            Login1.Font = new Font("Times New Roman", 9F);
+            Login1.ForeColor = SystemColors.ControlLightLight;
+            Login1.Location = new Point(234, 364);
+            Login1.Name = "Login1";
+            Login1.Size = new Size(94, 29);
+            Login1.TabIndex = 8;
+            Login1.Text = "Login";
+            Login1.UseVisualStyleBackColor = true;
+            Login1.Click += Login1_Click;
             // 
             // pictureBox1
             // 
@@ -154,10 +155,10 @@
             Controls.Add(label3);
             Controls.Add(label6);
             Controls.Add(label5);
-            Controls.Add(this.Login1);
+            Controls.Add(Login1);
             Controls.Add(label4);
-            Controls.Add(this.Password);
-            Controls.Add(this.Username);
+            Controls.Add(Password);
+            Controls.Add(Username);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
             Name = "Form1";
