@@ -36,7 +36,6 @@
             Laporan_btn = new Button();
             Pesanan_btn = new Button();
             Daftar_pelanggan_btn = new Button();
-            Kategori_btn = new Button();
             Data_btn = new Button();
             Dashboard_btn = new Button();
             panel2 = new Panel();
@@ -59,13 +58,11 @@
             panel1.Controls.Add(Laporan_btn);
             panel1.Controls.Add(Pesanan_btn);
             panel1.Controls.Add(Daftar_pelanggan_btn);
-            panel1.Controls.Add(Kategori_btn);
             panel1.Controls.Add(Data_btn);
             panel1.Controls.Add(Dashboard_btn);
             panel1.Location = new Point(2, -1);
-            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(219, 344);
+            panel1.Size = new Size(250, 459);
             panel1.TabIndex = 0;
             // 
             // label4
@@ -73,9 +70,9 @@
             label4.AutoSize = true;
             label4.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.ButtonHighlight;
-            label4.Location = new Point(70, 22);
+            label4.Location = new Point(80, 29);
             label4.Name = "label4";
-            label4.Size = new Size(111, 21);
+            label4.Size = new Size(138, 26);
             label4.TabIndex = 2;
             label4.Text = "Lorem Ipsum";
             // 
@@ -83,10 +80,9 @@
             // 
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Location = new Point(0, 10);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Location = new Point(0, 13);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(78, 40);
+            pictureBox1.Size = new Size(89, 53);
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
@@ -96,10 +92,9 @@
             Logout_btn.BackgroundImageLayout = ImageLayout.Stretch;
             Logout_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Logout_btn.ForeColor = SystemColors.ControlLightLight;
-            Logout_btn.Location = new Point(-3, 297);
-            Logout_btn.Margin = new Padding(3, 2, 3, 2);
+            Logout_btn.Location = new Point(-3, 396);
             Logout_btn.Name = "Logout_btn";
-            Logout_btn.Size = new Size(221, 42);
+            Logout_btn.Size = new Size(253, 56);
             Logout_btn.TabIndex = 15;
             Logout_btn.Text = "Logout";
             Logout_btn.UseVisualStyleBackColor = true;
@@ -111,10 +106,9 @@
             Laporan_btn.BackgroundImageLayout = ImageLayout.Stretch;
             Laporan_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Laporan_btn.ForeColor = SystemColors.ControlLightLight;
-            Laporan_btn.Location = new Point(-3, 196);
-            Laporan_btn.Margin = new Padding(3, 2, 3, 2);
+            Laporan_btn.Location = new Point(-3, 226);
             Laporan_btn.Name = "Laporan_btn";
-            Laporan_btn.Size = new Size(221, 30);
+            Laporan_btn.Size = new Size(253, 40);
             Laporan_btn.TabIndex = 14;
             Laporan_btn.Text = "Laporan";
             Laporan_btn.UseVisualStyleBackColor = true;
@@ -125,10 +119,9 @@
             Pesanan_btn.BackgroundImageLayout = ImageLayout.Stretch;
             Pesanan_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Pesanan_btn.ForeColor = SystemColors.ControlLightLight;
-            Pesanan_btn.Location = new Point(-3, 169);
-            Pesanan_btn.Margin = new Padding(3, 2, 3, 2);
+            Pesanan_btn.Location = new Point(-3, 190);
             Pesanan_btn.Name = "Pesanan_btn";
-            Pesanan_btn.Size = new Size(221, 30);
+            Pesanan_btn.Size = new Size(253, 40);
             Pesanan_btn.TabIndex = 13;
             Pesanan_btn.Text = "Pesanan";
             Pesanan_btn.UseVisualStyleBackColor = true;
@@ -139,28 +132,13 @@
             Daftar_pelanggan_btn.BackgroundImageLayout = ImageLayout.Stretch;
             Daftar_pelanggan_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Daftar_pelanggan_btn.ForeColor = SystemColors.ControlLightLight;
-            Daftar_pelanggan_btn.Location = new Point(-3, 142);
-            Daftar_pelanggan_btn.Margin = new Padding(3, 2, 3, 2);
+            Daftar_pelanggan_btn.Location = new Point(-3, 154);
             Daftar_pelanggan_btn.Name = "Daftar_pelanggan_btn";
-            Daftar_pelanggan_btn.Size = new Size(221, 30);
+            Daftar_pelanggan_btn.Size = new Size(253, 40);
             Daftar_pelanggan_btn.TabIndex = 12;
             Daftar_pelanggan_btn.Text = "Daftar Pelanggan";
             Daftar_pelanggan_btn.UseVisualStyleBackColor = true;
             Daftar_pelanggan_btn.Click += button1_Click;
-            // 
-            // Kategori_btn
-            // 
-            Kategori_btn.BackgroundImage = (Image)resources.GetObject("Kategori_btn.BackgroundImage");
-            Kategori_btn.BackgroundImageLayout = ImageLayout.Stretch;
-            Kategori_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Kategori_btn.ForeColor = SystemColors.ControlLightLight;
-            Kategori_btn.Location = new Point(-3, 116);
-            Kategori_btn.Margin = new Padding(3, 2, 3, 2);
-            Kategori_btn.Name = "Kategori_btn";
-            Kategori_btn.Size = new Size(221, 30);
-            Kategori_btn.TabIndex = 11;
-            Kategori_btn.Text = "Kategori";
-            Kategori_btn.UseVisualStyleBackColor = true;
             // 
             // Data_btn
             // 
@@ -168,10 +146,9 @@
             Data_btn.BackgroundImageLayout = ImageLayout.Stretch;
             Data_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Data_btn.ForeColor = SystemColors.ControlLightLight;
-            Data_btn.Location = new Point(-3, 88);
-            Data_btn.Margin = new Padding(3, 2, 3, 2);
+            Data_btn.Location = new Point(-3, 117);
             Data_btn.Name = "Data_btn";
-            Data_btn.Size = new Size(221, 30);
+            Data_btn.Size = new Size(253, 40);
             Data_btn.TabIndex = 10;
             Data_btn.Text = "Data Biji Kopi";
             Data_btn.UseVisualStyleBackColor = true;
@@ -182,10 +159,9 @@
             Dashboard_btn.BackgroundImageLayout = ImageLayout.Stretch;
             Dashboard_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Dashboard_btn.ForeColor = SystemColors.ControlLightLight;
-            Dashboard_btn.Location = new Point(-3, 62);
-            Dashboard_btn.Margin = new Padding(3, 2, 3, 2);
+            Dashboard_btn.Location = new Point(-3, 83);
             Dashboard_btn.Name = "Dashboard_btn";
-            Dashboard_btn.Size = new Size(221, 30);
+            Dashboard_btn.Size = new Size(253, 40);
             Dashboard_btn.TabIndex = 9;
             Dashboard_btn.Text = "Dashboard";
             Dashboard_btn.UseVisualStyleBackColor = true;
@@ -195,11 +171,30 @@
             panel2.BackColor = Color.Linen;
             panel2.Controls.Add(dataGridView1);
             panel2.Controls.Add(label3);
-            panel2.Location = new Point(220, 60);
-            panel2.Margin = new Padding(3, 2, 3, 2);
+            panel2.Location = new Point(251, 80);
             panel2.Name = "panel2";
-            panel2.Size = new Size(481, 280);
+            panel2.Size = new Size(550, 373);
             panel2.TabIndex = 1;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(21, 73);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(517, 285);
+            dataGridView1.TabIndex = 3;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(163, 36);
+            label3.Name = "label3";
+            label3.Size = new Size(240, 34);
+            label3.TabIndex = 2;
+            label3.Text = "Statistik Penjualan:";
             // 
             // label1
             // 
@@ -222,62 +217,19 @@
             label2.TabIndex = 1;
             label2.Text = "Lorem Ipsum";
             // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(18, 55);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(452, 214);
-            dataGridView1.TabIndex = 3;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(143, 27);
-            label3.Name = "label3";
-            label3.Size = new Size(196, 27);
-            label3.TabIndex = 2;
-            label3.Text = "Statistik Penjualan:";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(294, 15);
-            label1.Name = "label1";
-            label1.Size = new Size(163, 27);
-            label1.TabIndex = 0;
-            label1.Text = "Selamat Datang";
-            label1.Click += label1_Click_1;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(476, 15);
-            label2.Name = "label2";
-            label2.Size = new Size(141, 27);
-            label2.TabIndex = 1;
-            label2.Text = "Lorem Ipsum";
-            // 
             // Form3
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.Bisque;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(700, 338);
+            ClientSize = new Size(800, 451);
             Controls.Add(label2);
             Controls.Add(panel2);
             Controls.Add(label1);
             Controls.Add(panel1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "Form3";
             Text = "Halaman Utama";
             Load += Form3_Load;
@@ -304,7 +256,6 @@
         private Label label1;
         private Button Data_btn;
         private Button Dashboard_btn;
-        private Button Kategori_btn;
         private Button Daftar_pelanggan_btn;
         private Button Laporan_btn;
         private Button Pesanan_btn;

@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Data_Biji_Kopi));
             label2 = new Label();
             panel2 = new Panel();
+            button2 = new Button();
+            button1 = new Button();
+            dataGridView1 = new DataGridView();
             label3 = new Label();
             label1 = new Label();
             panel1 = new Panel();
@@ -40,16 +43,12 @@
             Laporan_btn = new Button();
             Pesanan_btn = new Button();
             Daftar_pelanggan_btn = new Button();
-            Kategori_btn = new Button();
             Data_btn = new Button();
             Dashboard_btn = new Button();
-            dataGridView1 = new DataGridView();
-            button1 = new Button();
-            button2 = new Button();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label2
@@ -73,6 +72,41 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(550, 373);
             panel2.TabIndex = 5;
+            // 
+            // button2
+            // 
+            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
+            button2.BackgroundImageLayout = ImageLayout.Stretch;
+            button2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.ForeColor = SystemColors.ControlLightLight;
+            button2.Location = new Point(251, 315);
+            button2.Name = "button2";
+            button2.Size = new Size(127, 40);
+            button2.TabIndex = 17;
+            button2.Text = "Edit Stok";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ControlLightLight;
+            button1.Location = new Point(384, 315);
+            button1.Name = "button1";
+            button1.Size = new Size(127, 40);
+            button1.TabIndex = 16;
+            button1.Text = "Tambah Stok";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(39, 45);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(472, 256);
+            dataGridView1.TabIndex = 3;
             // 
             // label3
             // 
@@ -103,7 +137,6 @@
             panel1.Controls.Add(Laporan_btn);
             panel1.Controls.Add(Pesanan_btn);
             panel1.Controls.Add(Daftar_pelanggan_btn);
-            panel1.Controls.Add(Kategori_btn);
             panel1.Controls.Add(Data_btn);
             panel1.Controls.Add(Dashboard_btn);
             panel1.Location = new Point(1, -4);
@@ -138,7 +171,7 @@
             Logout_btn.BackgroundImageLayout = ImageLayout.Stretch;
             Logout_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Logout_btn.ForeColor = SystemColors.ControlLightLight;
-            Logout_btn.Location = new Point(-3, 396);
+            Logout_btn.Location = new Point(-3, 398);
             Logout_btn.Name = "Logout_btn";
             Logout_btn.Size = new Size(253, 56);
             Logout_btn.TabIndex = 15;
@@ -151,7 +184,7 @@
             Laporan_btn.BackgroundImageLayout = ImageLayout.Stretch;
             Laporan_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Laporan_btn.ForeColor = SystemColors.ControlLightLight;
-            Laporan_btn.Location = new Point(-3, 261);
+            Laporan_btn.Location = new Point(-3, 223);
             Laporan_btn.Name = "Laporan_btn";
             Laporan_btn.Size = new Size(253, 40);
             Laporan_btn.TabIndex = 14;
@@ -164,7 +197,7 @@
             Pesanan_btn.BackgroundImageLayout = ImageLayout.Stretch;
             Pesanan_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Pesanan_btn.ForeColor = SystemColors.ControlLightLight;
-            Pesanan_btn.Location = new Point(-3, 225);
+            Pesanan_btn.Location = new Point(-3, 187);
             Pesanan_btn.Name = "Pesanan_btn";
             Pesanan_btn.Size = new Size(253, 40);
             Pesanan_btn.TabIndex = 13;
@@ -177,25 +210,12 @@
             Daftar_pelanggan_btn.BackgroundImageLayout = ImageLayout.Stretch;
             Daftar_pelanggan_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Daftar_pelanggan_btn.ForeColor = SystemColors.ControlLightLight;
-            Daftar_pelanggan_btn.Location = new Point(-3, 189);
+            Daftar_pelanggan_btn.Location = new Point(-3, 151);
             Daftar_pelanggan_btn.Name = "Daftar_pelanggan_btn";
             Daftar_pelanggan_btn.Size = new Size(253, 40);
             Daftar_pelanggan_btn.TabIndex = 12;
             Daftar_pelanggan_btn.Text = "Daftar Pelanggan";
             Daftar_pelanggan_btn.UseVisualStyleBackColor = true;
-            // 
-            // Kategori_btn
-            // 
-            Kategori_btn.BackgroundImage = (Image)resources.GetObject("Kategori_btn.BackgroundImage");
-            Kategori_btn.BackgroundImageLayout = ImageLayout.Stretch;
-            Kategori_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Kategori_btn.ForeColor = SystemColors.ControlLightLight;
-            Kategori_btn.Location = new Point(-3, 155);
-            Kategori_btn.Name = "Kategori_btn";
-            Kategori_btn.Size = new Size(253, 40);
-            Kategori_btn.TabIndex = 11;
-            Kategori_btn.Text = "Kategori";
-            Kategori_btn.UseVisualStyleBackColor = true;
             // 
             // Data_btn
             // 
@@ -223,41 +243,6 @@
             Dashboard_btn.Text = "Dashboard";
             Dashboard_btn.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(39, 45);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(472, 256);
-            dataGridView1.TabIndex = 3;
-            // 
-            // button1
-            // 
-            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
-            button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(384, 315);
-            button1.Name = "button1";
-            button1.Size = new Size(127, 40);
-            button1.TabIndex = 16;
-            button1.Text = "Tambah Stok";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
-            button2.BackgroundImageLayout = ImageLayout.Stretch;
-            button2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Location = new Point(251, 315);
-            button2.Name = "button2";
-            button2.Size = new Size(127, 40);
-            button2.TabIndex = 17;
-            button2.Text = "Edit Stok";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // Data_Biji_Kopi
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -271,10 +256,10 @@
             Text = "Data_Biji_Kopi";
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -292,7 +277,6 @@
         private Button Laporan_btn;
         private Button Pesanan_btn;
         private Button Daftar_pelanggan_btn;
-        private Button Kategori_btn;
         private Button Data_btn;
         private Button Dashboard_btn;
         private Button button1;
