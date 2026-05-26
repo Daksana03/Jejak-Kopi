@@ -49,12 +49,21 @@ namespace Jejak_Kopi
             }
             else if (status && is_admin == false)
             {
-                
+                Dashboard_User userDBoard = new Dashboard_User(inusern);
+                userDBoard.Show();
+                this.Hide();
             }
             else
             {
                 MessageBox.Show("Username atau Passwords Salah!!", "Login gagal");
             }
+        }
+
+        private void Register1_Click(object sender, EventArgs e)
+        {
+            Form2 regist = new Form2();
+            regist.Show();
+            this.Hide();
         }
     }
 }
