@@ -31,6 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard_User));
             label2 = new Label();
             panel2 = new Panel();
+            panel4 = new Panel();
+            label6 = new Label();
+            label7 = new Label();
+            panel3 = new Panel();
+            label3 = new Label();
+            label5 = new Label();
             label1 = new Label();
             panel1 = new Panel();
             label4 = new Label();
@@ -42,17 +48,11 @@
             Katalog_btn = new Button();
             Dashboard_btn = new Button();
             button1 = new Button();
-            label3 = new Label();
-            label5 = new Label();
-            panel3 = new Panel();
-            panel4 = new Panel();
-            label6 = new Label();
-            label7 = new Label();
             panel2.SuspendLayout();
+            panel4.SuspendLayout();
+            panel3.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel3.SuspendLayout();
-            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // label2
@@ -74,6 +74,69 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(550, 327);
             panel2.TabIndex = 5;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.White;
+            panel4.Controls.Add(label6);
+            panel4.Controls.Add(label7);
+            panel4.Location = new Point(289, 26);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(249, 240);
+            panel4.TabIndex = 21;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(17, 27);
+            label6.Name = "label6";
+            label6.Size = new Size(229, 26);
+            label6.TabIndex = 17;
+            label6.Text = "Total Kopi yang Dibeli:";
+            label6.Click += label6_Click_1;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Times New Roman", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(20, 114);
+            label7.Name = "label7";
+            label7.Size = new Size(215, 42);
+            label7.TabIndex = 18;
+            label7.Text = "Lorem Ipsum";
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.White;
+            panel3.Controls.Add(label3);
+            panel3.Controls.Add(label5);
+            panel3.Location = new Point(24, 26);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(249, 240);
+            panel3.TabIndex = 20;
+            panel3.Paint += panel3_Paint;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(47, 27);
+            label3.Name = "label3";
+            label3.Size = new Size(167, 26);
+            label3.TabIndex = 17;
+            label3.Text = "Total Pembelian:";
+            label3.Click += label3_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Times New Roman", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(20, 114);
+            label5.Name = "label5";
+            label5.Size = new Size(215, 42);
+            label5.TabIndex = 18;
+            label5.Text = "Lorem Ipsum";
             // 
             // label1
             // 
@@ -213,69 +276,6 @@
             button1.Text = "Jelajahi Katalog";
             button1.UseVisualStyleBackColor = true;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(47, 27);
-            label3.Name = "label3";
-            label3.Size = new Size(167, 26);
-            label3.TabIndex = 17;
-            label3.Text = "Total Pembelian:";
-            label3.Click += label3_Click;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Times New Roman", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(20, 114);
-            label5.Name = "label5";
-            label5.Size = new Size(215, 42);
-            label5.TabIndex = 18;
-            label5.Text = "Lorem Ipsum";
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.White;
-            panel3.Controls.Add(label3);
-            panel3.Controls.Add(label5);
-            panel3.Location = new Point(24, 26);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(249, 240);
-            panel3.TabIndex = 20;
-            panel3.Paint += panel3_Paint;
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.White;
-            panel4.Controls.Add(label6);
-            panel4.Controls.Add(label7);
-            panel4.Location = new Point(289, 26);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(249, 240);
-            panel4.TabIndex = 21;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(17, 27);
-            label6.Name = "label6";
-            label6.Size = new Size(229, 26);
-            label6.TabIndex = 17;
-            label6.Text = "Total Kopi yang Dibeli:";
-            label6.Click += label6_Click_1;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Times New Roman", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(20, 114);
-            label7.Name = "label7";
-            label7.Size = new Size(215, 42);
-            label7.TabIndex = 18;
-            label7.Text = "Lorem Ipsum";
-            // 
             // Dashboard_User
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -290,13 +290,13 @@
             Name = "Dashboard_User";
             Text = "Dashboard_User";
             panel2.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
