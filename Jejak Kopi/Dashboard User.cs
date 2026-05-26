@@ -10,9 +10,12 @@ namespace Jejak_Kopi
 {
     public partial class Dashboard_User : Form
     {
-        public Dashboard_User()
+        public Dashboard_User(string usern)
         {
             InitializeComponent();
+            label2.Text = usern;
+            label4.Text = usern;
+
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -43,6 +46,16 @@ namespace Jejak_Kopi
         private void label6_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void Katalog_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Logout_btn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

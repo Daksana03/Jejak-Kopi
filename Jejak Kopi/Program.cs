@@ -8,6 +8,9 @@ namespace Jejak_Kopi
         [STAThread]
         static void Main()
         {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            GlobalCloseHandler.EnableGlobalCloseForAllForms();
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();

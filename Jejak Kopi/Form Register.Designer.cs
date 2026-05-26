@@ -53,20 +53,22 @@
             Kembali1.BackgroundImageLayout = ImageLayout.Stretch;
             Kembali1.Font = new Font("Times New Roman", 9F);
             Kembali1.ForeColor = SystemColors.ControlLightLight;
-            Kembali1.Location = new Point(37, 434);
+            Kembali1.Location = new Point(32, 326);
+            Kembali1.Margin = new Padding(3, 2, 3, 2);
             Kembali1.Name = "Kembali1";
-            Kembali1.Size = new Size(94, 29);
+            Kembali1.Size = new Size(82, 22);
             Kembali1.TabIndex = 22;
             Kembali1.Text = "Kembali";
             Kembali1.UseVisualStyleBackColor = true;
+            Kembali1.Click += Kembali1_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(42, 148);
+            label3.Location = new Point(37, 111);
             label3.Name = "label3";
-            label3.Size = new Size(99, 17);
+            label3.Size = new Size(79, 15);
             label3.TabIndex = 21;
             label3.Text = "Nama Lengkap";
             // 
@@ -74,9 +76,9 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Tempus Sans ITC", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(123, 5);
+            label6.Location = new Point(108, 4);
             label6.Name = "label6";
-            label6.Size = new Size(176, 39);
+            label6.Size = new Size(140, 31);
             label6.TabIndex = 20;
             label6.Text = "Jejak Kopi: ";
             // 
@@ -84,9 +86,9 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(116, 44);
+            label5.Location = new Point(102, 33);
             label5.Name = "label5";
-            label5.Size = new Size(177, 17);
+            label5.Size = new Size(146, 15);
             label5.TabIndex = 19;
             label5.Text = "Sistem Pengelolaan Biji Kopi";
             // 
@@ -96,25 +98,28 @@
             Register2.BackgroundImageLayout = ImageLayout.Stretch;
             Register2.Font = new Font("Times New Roman", 9F);
             Register2.ForeColor = SystemColors.ControlLightLight;
-            Register2.Location = new Point(280, 434);
+            Register2.Location = new Point(245, 326);
+            Register2.Margin = new Padding(3, 2, 3, 2);
             Register2.Name = "Register2";
-            Register2.Size = new Size(94, 29);
+            Register2.Size = new Size(82, 22);
             Register2.TabIndex = 18;
             Register2.Text = "Register";
             Register2.UseVisualStyleBackColor = true;
             // 
             // Username
             // 
-            Username.Location = new Point(42, 227);
+            Username.Location = new Point(37, 170);
+            Username.Margin = new Padding(3, 2, 3, 2);
             Username.Name = "Username";
-            Username.Size = new Size(323, 27);
+            Username.Size = new Size(283, 23);
             Username.TabIndex = 16;
             // 
             // Nama
             // 
-            Nama.Location = new Point(42, 168);
+            Nama.Location = new Point(37, 126);
+            Nama.Margin = new Padding(3, 2, 3, 2);
             Nama.Name = "Nama";
-            Nama.Size = new Size(323, 27);
+            Nama.Size = new Size(283, 23);
             Nama.TabIndex = 15;
             Nama.TextChanged += Username_TextChanged;
             // 
@@ -122,9 +127,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(42, 207);
+            label2.Location = new Point(37, 155);
             label2.Name = "label2";
-            label2.Size = new Size(104, 17);
+            label2.Size = new Size(84, 15);
             label2.TabIndex = 14;
             label2.Text = "Buat Username:";
             label2.Click += label2_Click;
@@ -133,69 +138,73 @@
             // 
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Location = new Point(110, 44);
+            pictureBox1.Location = new Point(96, 33);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(183, 103);
+            pictureBox1.Size = new Size(160, 77);
             pictureBox1.TabIndex = 13;
             pictureBox1.TabStop = false;
             // 
             // Password
             // 
-            Password.Location = new Point(42, 279);
+            Password.Location = new Point(37, 209);
+            Password.Margin = new Padding(3, 2, 3, 2);
             Password.Name = "Password";
-            Password.Size = new Size(323, 27);
+            Password.Size = new Size(283, 23);
             Password.TabIndex = 24;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(42, 259);
+            label1.Location = new Point(37, 194);
             label1.Name = "label1";
-            label1.Size = new Size(101, 17);
+            label1.Size = new Size(83, 15);
             label1.TabIndex = 23;
             label1.Text = "Buat Password:";
             // 
             // No_Telp
             // 
-            No_Telp.Location = new Point(42, 336);
+            No_Telp.Location = new Point(37, 252);
+            No_Telp.Margin = new Padding(3, 2, 3, 2);
             No_Telp.Name = "No_Telp";
-            No_Telp.Size = new Size(323, 27);
+            No_Telp.Size = new Size(283, 23);
             No_Telp.TabIndex = 26;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(42, 316);
+            label4.Location = new Point(37, 237);
             label4.Name = "label4";
-            label4.Size = new Size(72, 17);
+            label4.Size = new Size(62, 15);
             label4.TabIndex = 25;
             label4.Text = "No Telpon:";
             // 
             // Email
             // 
-            Email.Location = new Point(42, 388);
+            Email.Location = new Point(37, 291);
+            Email.Margin = new Padding(3, 2, 3, 2);
             Email.Name = "Email";
-            Email.Size = new Size(323, 27);
+            Email.Size = new Size(283, 23);
             Email.TabIndex = 28;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(42, 368);
+            label7.Location = new Point(37, 276);
             label7.Name = "label7";
-            label7.Size = new Size(44, 17);
+            label7.Size = new Size(37, 15);
             label7.TabIndex = 27;
             label7.Text = "Email:";
             // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Bisque;
-            ClientSize = new Size(405, 475);
+            ClientSize = new Size(354, 356);
             Controls.Add(Email);
             Controls.Add(label7);
             Controls.Add(No_Telp);
@@ -211,6 +220,7 @@
             Controls.Add(Nama);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Form2";
             Text = "Form Registrasi";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
