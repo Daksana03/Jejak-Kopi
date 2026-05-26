@@ -1,6 +1,6 @@
 ﻿namespace Jejak_Kopi
 {
-    partial class Data_Biji_Kopi
+    partial class Daftar_Pekanggan
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Data_Biji_Kopi));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Daftar_Pekanggan));
             label2 = new Label();
             panel2 = new Panel();
-            button2 = new Button();
-            button1 = new Button();
-            data_kopi = new DataGridView();
+            edit_pelanggan_btn = new Button();
+            data_pelanggan = new DataGridView();
             label3 = new Label();
             label1 = new Label();
             panel1 = new Panel();
@@ -46,7 +45,7 @@
             Data_btn = new Button();
             Dashboard_btn = new Button();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)data_kopi).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)data_pelanggan).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -58,55 +57,41 @@
             label2.Location = new Point(543, 17);
             label2.Name = "label2";
             label2.Size = new Size(175, 34);
-            label2.TabIndex = 4;
+            label2.TabIndex = 8;
             label2.Text = "Lorem Ipsum";
             // 
             // panel2
             // 
             panel2.BackColor = Color.Linen;
-            panel2.Controls.Add(button2);
-            panel2.Controls.Add(button1);
-            panel2.Controls.Add(data_kopi);
+            panel2.Controls.Add(edit_pelanggan_btn);
+            panel2.Controls.Add(data_pelanggan);
             panel2.Controls.Add(label3);
             panel2.Location = new Point(250, 77);
             panel2.Name = "panel2";
             panel2.Size = new Size(550, 373);
-            panel2.TabIndex = 5;
+            panel2.TabIndex = 9;
             // 
-            // button2
+            // edit_pelanggan_btn
             // 
-            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
-            button2.BackgroundImageLayout = ImageLayout.Stretch;
-            button2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Location = new Point(251, 315);
-            button2.Name = "button2";
-            button2.Size = new Size(127, 40);
-            button2.TabIndex = 17;
-            button2.Text = "Edit Stok";
-            button2.UseVisualStyleBackColor = true;
+            edit_pelanggan_btn.BackgroundImage = (Image)resources.GetObject("edit_pelanggan_btn.BackgroundImage");
+            edit_pelanggan_btn.BackgroundImageLayout = ImageLayout.Stretch;
+            edit_pelanggan_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            edit_pelanggan_btn.ForeColor = SystemColors.ControlLightLight;
+            edit_pelanggan_btn.Location = new Point(384, 315);
+            edit_pelanggan_btn.Name = "edit_pelanggan_btn";
+            edit_pelanggan_btn.Size = new Size(127, 40);
+            edit_pelanggan_btn.TabIndex = 16;
+            edit_pelanggan_btn.Text = "Edit Data ";
+            edit_pelanggan_btn.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // data_pelanggan
             // 
-            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
-            button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(384, 315);
-            button1.Name = "button1";
-            button1.Size = new Size(127, 40);
-            button1.TabIndex = 16;
-            button1.Text = "Tambah Stok";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // data_kopi
-            // 
-            data_kopi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            data_kopi.Location = new Point(39, 45);
-            data_kopi.Name = "data_kopi";
-            data_kopi.RowHeadersWidth = 51;
-            data_kopi.Size = new Size(472, 256);
-            data_kopi.TabIndex = 3;
+            data_pelanggan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            data_pelanggan.Location = new Point(39, 45);
+            data_pelanggan.Name = "data_pelanggan";
+            data_pelanggan.RowHeadersWidth = 51;
+            data_pelanggan.Size = new Size(472, 256);
+            data_pelanggan.TabIndex = 3;
             // 
             // label3
             // 
@@ -114,9 +99,9 @@
             label3.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.Location = new Point(192, 16);
             label3.Name = "label3";
-            label3.Size = new Size(164, 26);
+            label3.Size = new Size(177, 26);
             label3.TabIndex = 2;
-            label3.Text = "Stok di Gudang:";
+            label3.Text = "Daftar Pelanggan:";
             // 
             // label1
             // 
@@ -125,7 +110,7 @@
             label1.Location = new Point(335, 17);
             label1.Name = "label1";
             label1.Size = new Size(202, 34);
-            label1.TabIndex = 2;
+            label1.TabIndex = 6;
             label1.Text = "Selamat Datang";
             // 
             // panel1
@@ -142,7 +127,7 @@
             panel1.Location = new Point(1, -4);
             panel1.Name = "panel1";
             panel1.Size = new Size(250, 459);
-            panel1.TabIndex = 3;
+            panel1.TabIndex = 7;
             // 
             // label4
             // 
@@ -243,7 +228,7 @@
             Dashboard_btn.Text = "Dashboard";
             Dashboard_btn.UseVisualStyleBackColor = true;
             // 
-            // Data_Biji_Kopi
+            // Daftar_Pekanggan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -252,11 +237,11 @@
             Controls.Add(panel2);
             Controls.Add(label1);
             Controls.Add(panel1);
-            Name = "Data_Biji_Kopi";
-            Text = "Data_Biji_Kopi";
+            Name = "Daftar_Pekanggan";
+            Text = "Daftar_Pekanggan";
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)data_kopi).EndInit();
+            ((System.ComponentModel.ISupportInitialize)data_pelanggan).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -268,6 +253,9 @@
 
         private Label label2;
         private Panel panel2;
+        private Button button2;
+        private Button edit_pelanggan_btn;
+        private DataGridView data_pelanggan;
         private Label label3;
         private Label label1;
         private Panel panel1;
@@ -279,8 +267,5 @@
         private Button Daftar_pelanggan_btn;
         private Button Data_btn;
         private Button Dashboard_btn;
-        private Button button1;
-        private DataGridView data_kopi;
-        private Button button2;
     }
 }
