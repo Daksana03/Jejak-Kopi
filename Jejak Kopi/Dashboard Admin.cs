@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Jejak_Kopi.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,14 @@ namespace Jejak_Kopi
 {
     public partial class Form3 : Form
     {
+        public string adminName;
         public Form3(string adminName)
         {
             InitializeComponent();
             label2.Text = adminName;
             label4.Text = adminName;
+
+            this.adminName = adminName;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -34,17 +38,23 @@ namespace Jejak_Kopi
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         private void Form3_Load(object sender, EventArgs e)
         {
-
+            
         }
 
-        private void Logout_btn_Click(object sender, EventArgs e)
+        private void Logout_btn_Click1(object sender, EventArgs e)
         {
-            Application.Exit();
+            Application.Restart();
+        }
+
+        private void Data_btn_Click(object sender, EventArgs e)
+        {
+            Data_Biji_Kopi kopi = new Data_Biji_Kopi(adminName);
+            kopi.Show();
+            this.Hide();
         }
     }
 }

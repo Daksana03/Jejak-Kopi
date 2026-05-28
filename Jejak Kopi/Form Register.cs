@@ -27,10 +27,8 @@ namespace Jejak_Kopi
 
         private void Kembali1_Click(object sender, EventArgs e)
         {
-            Form1 login = new Form1();
-            login.Show();
-            this.Hide();
-            
+            Application.Restart();
+
         }
     }
 }

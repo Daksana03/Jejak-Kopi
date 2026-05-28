@@ -31,6 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Katalog_Kopi_User));
             label2 = new Label();
             panel2 = new Panel();
+            label5 = new Label();
+            textBox1 = new TextBox();
+            tambah_btn = new Button();
+            label3 = new Label();
+            dataGridView1 = new DataGridView();
             label1 = new Label();
             panel1 = new Panel();
             label4 = new Label();
@@ -41,24 +46,19 @@
             Keranjang_btn = new Button();
             Katalog_btn = new Button();
             Dashboard_btn = new Button();
-            dataGridView1 = new DataGridView();
-            label3 = new Label();
-            tambah_btn = new Button();
-            textBox1 = new TextBox();
-            label5 = new Label();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(543, 17);
+            label2.Location = new Point(475, 13);
             label2.Name = "label2";
-            label2.Size = new Size(175, 34);
+            label2.Size = new Size(141, 27);
             label2.TabIndex = 19;
             label2.Text = "Lorem Ipsum";
             // 
@@ -70,18 +70,72 @@
             panel2.Controls.Add(tambah_btn);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(dataGridView1);
-            panel2.Location = new Point(250, 68);
+            panel2.Location = new Point(219, 51);
+            panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(550, 383);
+            panel2.Size = new Size(481, 287);
             panel2.TabIndex = 20;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(89, 234);
+            label5.Name = "label5";
+            label5.Size = new Size(117, 19);
+            label5.TabIndex = 23;
+            label5.Text = "Kuantitas (Gram):";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(89, 253);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(135, 23);
+            textBox1.TabIndex = 22;
+            // 
+            // tambah_btn
+            // 
+            tambah_btn.BackgroundImage = (Image)resources.GetObject("tambah_btn.BackgroundImage");
+            tambah_btn.BackgroundImageLayout = ImageLayout.Stretch;
+            tambah_btn.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tambah_btn.ForeColor = SystemColors.ControlLightLight;
+            tambah_btn.Location = new Point(334, 242);
+            tambah_btn.Margin = new Padding(3, 2, 3, 2);
+            tambah_btn.Name = "tambah_btn";
+            tambah_btn.Size = new Size(122, 36);
+            tambah_btn.TabIndex = 16;
+            tambah_btn.Text = "Tambah ke Keranjang";
+            tambah_btn.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(172, 12);
+            label3.Name = "label3";
+            label3.Size = new Size(113, 21);
+            label3.TabIndex = 21;
+            label3.Text = "Katalog Kopi:";
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(30, 34);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(426, 193);
+            dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(335, 17);
+            label1.Location = new Point(293, 13);
             label1.Name = "label1";
-            label1.Size = new Size(202, 34);
+            label1.Size = new Size(163, 27);
             label1.TabIndex = 17;
             label1.Text = "Selamat Datang";
             // 
@@ -96,9 +150,10 @@
             panel1.Controls.Add(Keranjang_btn);
             panel1.Controls.Add(Katalog_btn);
             panel1.Controls.Add(Dashboard_btn);
-            panel1.Location = new Point(1, -4);
+            panel1.Location = new Point(1, -3);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(250, 459);
+            panel1.Size = new Size(219, 344);
             panel1.TabIndex = 18;
             // 
             // label4
@@ -106,9 +161,9 @@
             label4.AutoSize = true;
             label4.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.ButtonHighlight;
-            label4.Location = new Point(80, 29);
+            label4.Location = new Point(70, 22);
             label4.Name = "label4";
-            label4.Size = new Size(138, 26);
+            label4.Size = new Size(111, 21);
             label4.TabIndex = 2;
             label4.Text = "Lorem Ipsum";
             // 
@@ -116,9 +171,10 @@
             // 
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Location = new Point(0, 13);
+            pictureBox1.Location = new Point(0, 10);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(89, 53);
+            pictureBox1.Size = new Size(78, 40);
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
@@ -128,12 +184,14 @@
             Logout_btn.BackgroundImageLayout = ImageLayout.Stretch;
             Logout_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Logout_btn.ForeColor = SystemColors.ControlLightLight;
-            Logout_btn.Location = new Point(-3, 403);
+            Logout_btn.Location = new Point(-3, 302);
+            Logout_btn.Margin = new Padding(3, 2, 3, 2);
             Logout_btn.Name = "Logout_btn";
-            Logout_btn.Size = new Size(253, 56);
+            Logout_btn.Size = new Size(221, 42);
             Logout_btn.TabIndex = 15;
             Logout_btn.Text = "Logout";
             Logout_btn.UseVisualStyleBackColor = true;
+            Logout_btn.Click += Logout_btn_Click;
             // 
             // Saldo_btn
             // 
@@ -141,9 +199,10 @@
             Saldo_btn.BackgroundImageLayout = ImageLayout.Stretch;
             Saldo_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Saldo_btn.ForeColor = SystemColors.ControlLightLight;
-            Saldo_btn.Location = new Point(-3, 225);
+            Saldo_btn.Location = new Point(-3, 169);
+            Saldo_btn.Margin = new Padding(3, 2, 3, 2);
             Saldo_btn.Name = "Saldo_btn";
-            Saldo_btn.Size = new Size(253, 40);
+            Saldo_btn.Size = new Size(221, 30);
             Saldo_btn.TabIndex = 13;
             Saldo_btn.Text = "Saldo";
             Saldo_btn.UseVisualStyleBackColor = true;
@@ -154,9 +213,10 @@
             Riwayat_btn.BackgroundImageLayout = ImageLayout.Stretch;
             Riwayat_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Riwayat_btn.ForeColor = SystemColors.ControlLightLight;
-            Riwayat_btn.Location = new Point(-3, 189);
+            Riwayat_btn.Location = new Point(-3, 142);
+            Riwayat_btn.Margin = new Padding(3, 2, 3, 2);
             Riwayat_btn.Name = "Riwayat_btn";
-            Riwayat_btn.Size = new Size(253, 40);
+            Riwayat_btn.Size = new Size(221, 30);
             Riwayat_btn.TabIndex = 12;
             Riwayat_btn.Text = "Riwayat Transaksi";
             Riwayat_btn.UseVisualStyleBackColor = true;
@@ -167,9 +227,10 @@
             Keranjang_btn.BackgroundImageLayout = ImageLayout.Stretch;
             Keranjang_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Keranjang_btn.ForeColor = SystemColors.ControlLightLight;
-            Keranjang_btn.Location = new Point(-3, 155);
+            Keranjang_btn.Location = new Point(-3, 116);
+            Keranjang_btn.Margin = new Padding(3, 2, 3, 2);
             Keranjang_btn.Name = "Keranjang_btn";
-            Keranjang_btn.Size = new Size(253, 40);
+            Keranjang_btn.Size = new Size(221, 30);
             Keranjang_btn.TabIndex = 11;
             Keranjang_btn.Text = "Keranjang";
             Keranjang_btn.UseVisualStyleBackColor = true;
@@ -180,9 +241,10 @@
             Katalog_btn.BackgroundImageLayout = ImageLayout.Stretch;
             Katalog_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Katalog_btn.ForeColor = SystemColors.ControlLightLight;
-            Katalog_btn.Location = new Point(-3, 117);
+            Katalog_btn.Location = new Point(-3, 88);
+            Katalog_btn.Margin = new Padding(3, 2, 3, 2);
             Katalog_btn.Name = "Katalog_btn";
-            Katalog_btn.Size = new Size(253, 40);
+            Katalog_btn.Size = new Size(221, 30);
             Katalog_btn.TabIndex = 10;
             Katalog_btn.Text = "Katalog Kopi";
             Katalog_btn.UseVisualStyleBackColor = true;
@@ -193,79 +255,32 @@
             Dashboard_btn.BackgroundImageLayout = ImageLayout.Stretch;
             Dashboard_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Dashboard_btn.ForeColor = SystemColors.ControlLightLight;
-            Dashboard_btn.Location = new Point(-3, 83);
+            Dashboard_btn.Location = new Point(-3, 62);
+            Dashboard_btn.Margin = new Padding(3, 2, 3, 2);
             Dashboard_btn.Name = "Dashboard_btn";
-            Dashboard_btn.Size = new Size(253, 40);
+            Dashboard_btn.Size = new Size(221, 30);
             Dashboard_btn.TabIndex = 9;
             Dashboard_btn.Text = "Dashboard";
             Dashboard_btn.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(34, 45);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(487, 257);
-            dataGridView1.TabIndex = 0;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(196, 16);
-            label3.Name = "label3";
-            label3.Size = new Size(141, 26);
-            label3.TabIndex = 21;
-            label3.Text = "Katalog Kopi:";
-            // 
-            // tambah_btn
-            // 
-            tambah_btn.BackgroundImage = (Image)resources.GetObject("tambah_btn.BackgroundImage");
-            tambah_btn.BackgroundImageLayout = ImageLayout.Stretch;
-            tambah_btn.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tambah_btn.ForeColor = SystemColors.ControlLightLight;
-            tambah_btn.Location = new Point(382, 322);
-            tambah_btn.Name = "tambah_btn";
-            tambah_btn.Size = new Size(139, 48);
-            tambah_btn.TabIndex = 16;
-            tambah_btn.Text = "Tambah ke Keranjang";
-            tambah_btn.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(102, 337);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(154, 27);
-            textBox1.TabIndex = 22;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(102, 312);
-            label5.Name = "label5";
-            label5.Size = new Size(153, 22);
-            label5.TabIndex = 23;
-            label5.Text = "Kuantitas (Gram):";
-            // 
             // Katalog_Kopi_User
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(label2);
             Controls.Add(panel2);
             Controls.Add(label1);
             Controls.Add(panel1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Katalog_Kopi_User";
             Text = "Katalog_Kopi_User";
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

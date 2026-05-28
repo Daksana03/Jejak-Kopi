@@ -10,11 +10,14 @@ namespace Jejak_Kopi
 {
     public partial class Dashboard_User : Form
     {
+        public string usern;
         public Dashboard_User(string usern)
         {
             InitializeComponent();
             label2.Text = usern;
             label4.Text = usern;
+
+            this.usern = usern;
 
         }
 
@@ -50,12 +53,23 @@ namespace Jejak_Kopi
 
         private void Katalog_btn_Click(object sender, EventArgs e)
         {
-
+            Katalog_Kopi_User kopiUser = new Katalog_Kopi_User(usern);
+            kopiUser.Show();
+            this.Hide();
         }
 
         private void Logout_btn_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Form1 login = new Form1();
+            login.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Katalog_Kopi_User kopiUser = new Katalog_Kopi_User(usern);
+            kopiUser.Show();
+            this.Hide();
         }
     }
 }

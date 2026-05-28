@@ -289,6 +289,7 @@
             button1.TabIndex = 16;
             button1.Text = "Jelajahi Katalog";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Dashboard_User
             // 
