@@ -33,7 +33,9 @@ namespace Jejak_Kopi
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Daftar_Pelanggan daftar = new Daftar_Pelanggan(adminName);
+            daftar.Show();
+            this.Hide();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

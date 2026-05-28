@@ -1,6 +1,6 @@
 ﻿namespace Jejak_Kopi
 {
-    partial class Daftar_Pekanggan
+    partial class Daftar_Pelanggan
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Daftar_Pekanggan));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Daftar_Pelanggan));
             label2 = new Label();
             panel2 = new Panel();
             edit_pelanggan_btn = new Button();
@@ -227,8 +227,9 @@
             Dashboard_btn.TabIndex = 9;
             Dashboard_btn.Text = "Dashboard";
             Dashboard_btn.UseVisualStyleBackColor = true;
+            Dashboard_btn.Click += Dashboard_btn_Click;
             // 
-            // Daftar_Pekanggan
+            // Daftar_Pelanggan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -237,8 +238,8 @@
             Controls.Add(panel2);
             Controls.Add(label1);
             Controls.Add(panel1);
-            Name = "Daftar_Pekanggan";
-            Text = "Daftar_Pekanggan";
+            Name = "Daftar_Pelanggan";
+            Text = "Daftar_Pelanggan";
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)data_pelanggan).EndInit();

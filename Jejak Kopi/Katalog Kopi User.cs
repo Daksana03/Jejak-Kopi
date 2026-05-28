@@ -11,13 +11,15 @@ namespace Jejak_Kopi
 {
     public partial class Katalog_Kopi_User : Form
     {
+        private readonly string inusern; // added to store the username passed in
+
         public Katalog_Kopi_User(string usern)
         {
             InitializeComponent();
             label2.Text = usern;
             label4.Text = usern;
-
-            this.Load += new EventHandler(this.Katalog_Kopi_User_Load);
+            this.inusern = usern; 
+            this.Load += this.Katalog_Kopi_User_Load;
         }
 
         private void Katalog_Kopi_User_Load(object sender, EventArgs e)
@@ -43,6 +45,13 @@ namespace Jejak_Kopi
         private void Logout_btn_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        private void Dashboard_btn_Click(object sender, EventArgs e)
+        {
+            Dashboard_User userDBoard = new Dashboard_User(inusern);
+            userDBoard.Show();
+            this.Hide();
         }
     }
 }
