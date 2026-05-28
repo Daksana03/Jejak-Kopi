@@ -12,10 +12,13 @@ namespace Jejak_Kopi
     public partial class Katalog_Kopi_User : Form
     {
         private readonly string inusern; // added to store the username passed in
+        private FormUtama _induk;
 
-        public Katalog_Kopi_User(string usern)
+        public Katalog_Kopi_User(FormUtama induk,string usern)
         {
             InitializeComponent();
+            _induk = induk;
+            inusern = usern;
             label2.Text = usern;
             label4.Text = usern;
             this.inusern = usern; 
@@ -49,9 +52,14 @@ namespace Jejak_Kopi
 
         private void Dashboard_btn_Click(object sender, EventArgs e)
         {
-            Dashboard_User userDBoard = new Dashboard_User(inusern);
-            userDBoard.Show();
-            this.Hide();
+            //Dashboard_User userDBoard = new Dashboard_User(inusern);
+            //userDBoard.Show();
+            //this.Hide();
+            if (_induk != null)
+            {
+                _induk.BukaPanel(new Dashboard_User(inusern, _induk));
+                //_induk.BukaPanel(_induk.FormUser);
+            }
         }
     }
 }

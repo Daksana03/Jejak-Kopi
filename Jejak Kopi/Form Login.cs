@@ -49,8 +49,10 @@ namespace Jejak_Kopi
             }
             else if (status && is_admin == false)
             {
-                Dashboard_User userDBoard = new Dashboard_User(inusern);
-                userDBoard.Show();
+                //Dashboard_User userDBoard = new Dashboard_User(inusern);
+                //userDBoard.Show();
+                FormUtama FormUser = new FormUtama(inusern);
+                FormUser.Show();
                 this.Hide();
             }
             else
