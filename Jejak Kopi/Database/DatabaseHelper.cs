@@ -8,7 +8,7 @@ namespace Jejak_Kopi.Database
 {
     public class DatabaseHelper
     {
-        private string connString = "Host=localhost;Port=5432;Database=Projek_Final;Username=postgres;Password=123";
+        private string connString = "Host=localhost;Port=5432;Database=Jejak_Kopi;Username=postgres;Password=1234";
 
 
         public NpgsqlConnection GetConnection()
@@ -38,26 +38,5 @@ namespace Jejak_Kopi.Database
             }
             return list;
         }
-
-        public List<KatalogUser> GetKatalogs()
-        {
-            List<KatalogUser> list = new List<KatalogUser>();
-            using var conn = new NpgsqlConnection(connString);
-            conn.Open();
-            using var cmd = new NpgsqlCommand("SELECT * FROM kopi", conn);
-            using var reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                list.Add(new KatalogUser(
-                    reader.GetString(0),
-                    reader.GetInt32(1),
-                    reader.GetInt32(2),
-                    reader.GetString(3)
-
-                ));
-            }
-            return list;
-        }
-
     }
 }
