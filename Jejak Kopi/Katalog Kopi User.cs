@@ -102,17 +102,5 @@ namespace Jejak_Kopi
             }
         }
 
-        protected override void Dispose(bool disposing) // Buat gantiin yang di designer
-        {
-            if (disposing)
-            {
-                // Unsubscribe from parent events
-                if (this != null)
-                {
-                    this.Load -= this.Katalog_Kopi_User_Load;
-                }
-            }
-            base.Dispose(disposing);
-        }
     }
 }
