@@ -57,9 +57,22 @@ namespace Jejak_Kopi
             //this.Hide();
             if (_induk != null)
             {
-                _induk.BukaPanel(new Dashboard_User(inusern, _induk));
-                //_induk.BukaPanel(_induk.FormUser);
+                //_induk.BukaPanel(new Dashboard_User(inusern, _induk));
+                _induk.BukaPanel(_induk.FormUser);
             }
+        }
+
+        protected override void Dispose(bool disposing) // Buat gantiin yang di designer
+        {
+            if (disposing)
+            {
+                // Unsubscribe from parent events
+                if (this != null)
+                {
+                    this.Load -= this.Katalog_Kopi_User_Load;
+                }
+            }
+            base.Dispose(disposing);
         }
     }
 }

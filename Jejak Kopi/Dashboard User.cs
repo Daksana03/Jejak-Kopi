@@ -61,8 +61,8 @@ namespace Jejak_Kopi
 
             if (_induk != null)
             {
-                _induk.BukaPanel(new Katalog_Kopi_User(_induk ,usern));
-                //_induk.BukaPanel(_induk.FormKatalogUser);
+                //_induk.BukaPanel(new Katalog_Kopi_User(_induk ,usern));
+                _induk.BukaPanel(_induk.FormKatalogUser);
             }
         }
 

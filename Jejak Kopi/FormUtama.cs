@@ -11,35 +11,58 @@ namespace Jejak_Kopi
     public partial class FormUtama : Form
     {
         public string data; //Sementara jadi public. Harusnya ini jadi id dari usernya dan private(?)
-        //public Dashboard_User FormUser; 
-        //public Katalog_Kopi_User FormKatalogUser; 
+        public Dashboard_User FormUser;
+        public Katalog_Kopi_User FormKatalogUser; 
+
         public FormUtama(string data)
         {
             InitializeComponent();
-            //panel1.GetType().GetProperty("DoubleBuffered", System.Reflection.BindingFlags.Instance |
-            //    System.Reflection.BindingFlags.NonPublic)?.SetValue(panel1, true, null); // Double buffered
+            panel1.GetType().GetProperty("DoubleBuffered", System.Reflection.BindingFlags.Instance |
+                System.Reflection.BindingFlags.NonPublic)?.SetValue(panel1, true, null); // Double buffered biar transisi mulus
             this.data = data;
-            //FormUser = new Dashboard_User(data, this);
-            //FormKatalogUser = new Katalog_Kopi_User(this, data);
-            BukaPanel(new Dashboard_User(data, this));
-            //BukaPanel(FormUser);
+            Preload();
+            //BukaPanel(new Dashboard_User(data, this));
+            BukaPanel(FormUser);
+        }
+
+        public void Preload()
+        {
+            FormUser = new Dashboard_User(data, this) { TopLevel = false, FormBorderStyle = FormBorderStyle.None, Dock = DockStyle.Fill, Visible = false };
+            FormKatalogUser = new Katalog_Kopi_User(this, data) { TopLevel = false, FormBorderStyle = FormBorderStyle.None, Dock = DockStyle.Fill, Visible = false };
+
+            panel1.Controls.Add(FormUser);
+            panel1.Controls.Add(FormKatalogUser);
+
+            FormUser.Show();
+            FormKatalogUser.Show();
         }
 
         public void BukaPanel(Form formAnak)
         {
-            if (this.panel1.Controls.Count > 0)
+            //if (this.panel1.Controls.Count > 0)
+            //{
+
+            //    this.panel1.Controls[0].Dispose();
+            //    this.panel1.Controls.Clear();
+            //}
+
+            //formAnak.TopLevel = false;
+            //formAnak.FormBorderStyle = FormBorderStyle.None;
+            //formAnak.Dock = DockStyle.Fill;
+
+            //this.panel1.Controls.Add(formAnak);
+            //this.panel1.Tag = formAnak;
+            //formAnak.Show();
+            panel1.SuspendLayout();
+            foreach (Control control in panel1.Controls)
             {
-                this.panel1.Controls[0].Dispose();
-                this.panel1.Controls.Clear();
+                control.Visible = false;
             }
+            formAnak.Visible = true;
+            formAnak.BringToFront();
+            panel1.ResumeLayout();
 
-            formAnak.TopLevel = false;
-            formAnak.FormBorderStyle = FormBorderStyle.None;
-            formAnak.Dock = DockStyle.Fill;
 
-            this.panel1.Controls.Add(formAnak);
-            this.panel1.Tag = formAnak;
-            formAnak.Show();
         }
     }
 }
