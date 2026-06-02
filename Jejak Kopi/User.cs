@@ -27,6 +27,7 @@ namespace Jejak_Kopi
             this.is_delete = delete;
         }
 
+        public User() {}
 
     }
 }

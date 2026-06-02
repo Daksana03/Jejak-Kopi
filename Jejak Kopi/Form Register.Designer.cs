@@ -105,6 +105,7 @@
             Register2.TabIndex = 18;
             Register2.Text = "Register";
             Register2.UseVisualStyleBackColor = true;
+            Register2.Click += Register2_Click_1;
             // 
             // Username
             // 

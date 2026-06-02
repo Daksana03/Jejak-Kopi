@@ -1,4 +1,5 @@
 using Jejak_Kopi.Database;
+using Microsoft.VisualBasic.Logging;
 using System.Drawing.Text;
 
 namespace Jejak_Kopi
@@ -45,7 +46,7 @@ namespace Jejak_Kopi
             {
                 Form3 mainDashboard = new Form3(inusern);
                 mainDashboard.Show();
-                this.Hide();
+                //this.Close();
             }
             else if (status && is_admin == false)
             {
@@ -53,7 +54,8 @@ namespace Jejak_Kopi
                 //userDBoard.Show();
                 FormUtama FormUser = new FormUtama(inusern);
                 FormUser.Show();
-                this.Hide();
+                //this.Hide();
+        
             }
             else
             {
@@ -64,8 +66,17 @@ namespace Jejak_Kopi
         private void Register1_Click(object sender, EventArgs e)
         {
             Form2 regist = new Form2();
-            regist.Show();
+            regist.ShowDialog();
             this.Hide();
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Application.Exit();
+            }
+            base.OnFormClosing(e);
         }
     }
 }

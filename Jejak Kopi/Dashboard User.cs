@@ -68,10 +68,9 @@ namespace Jejak_Kopi
 
         private void Logout_btn_Click(object sender, EventArgs e)
         {
-            //Form1 login = new Form1();
-            //login.Show();
-            //this.Hide();
-            Application.Restart();
+            Form1 login = new Form1();
+            login.Show();
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
