@@ -73,7 +73,7 @@
             // 
             // edit_pelanggan_btn
             // 
-            edit_pelanggan_btn.BackgroundImage = (Image)resources.GetObject("edit_pelanggan_btn.BackgroundImage");
+            edit_pelanggan_btn.BackColor = Color.Peru;
             edit_pelanggan_btn.BackgroundImageLayout = ImageLayout.Stretch;
             edit_pelanggan_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             edit_pelanggan_btn.ForeColor = SystemColors.ControlLightLight;
@@ -82,7 +82,7 @@
             edit_pelanggan_btn.Size = new Size(127, 40);
             edit_pelanggan_btn.TabIndex = 16;
             edit_pelanggan_btn.Text = "Edit Data ";
-            edit_pelanggan_btn.UseVisualStyleBackColor = true;
+            edit_pelanggan_btn.UseVisualStyleBackColor = false;
             // 
             // data_pelanggan
             // 
@@ -92,6 +92,7 @@
             data_pelanggan.RowHeadersWidth = 51;
             data_pelanggan.Size = new Size(472, 256);
             data_pelanggan.TabIndex = 3;
+            data_pelanggan.CellContentClick += data_pelanggan_CellContentClick;
             // 
             // label3
             // 
@@ -152,7 +153,7 @@
             // 
             // Logout_btn
             // 
-            Logout_btn.BackgroundImage = (Image)resources.GetObject("Logout_btn.BackgroundImage");
+            Logout_btn.BackColor = Color.Peru;
             Logout_btn.BackgroundImageLayout = ImageLayout.Stretch;
             Logout_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Logout_btn.ForeColor = SystemColors.ControlLightLight;
@@ -161,11 +162,11 @@
             Logout_btn.Size = new Size(253, 56);
             Logout_btn.TabIndex = 15;
             Logout_btn.Text = "Logout";
-            Logout_btn.UseVisualStyleBackColor = true;
+            Logout_btn.UseVisualStyleBackColor = false;
             // 
             // Laporan_btn
             // 
-            Laporan_btn.BackgroundImage = (Image)resources.GetObject("Laporan_btn.BackgroundImage");
+            Laporan_btn.BackColor = Color.Peru;
             Laporan_btn.BackgroundImageLayout = ImageLayout.Stretch;
             Laporan_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Laporan_btn.ForeColor = SystemColors.ControlLightLight;
@@ -174,11 +175,11 @@
             Laporan_btn.Size = new Size(253, 40);
             Laporan_btn.TabIndex = 14;
             Laporan_btn.Text = "Laporan";
-            Laporan_btn.UseVisualStyleBackColor = true;
+            Laporan_btn.UseVisualStyleBackColor = false;
             // 
             // Pesanan_btn
             // 
-            Pesanan_btn.BackgroundImage = (Image)resources.GetObject("Pesanan_btn.BackgroundImage");
+            Pesanan_btn.BackColor = Color.Peru;
             Pesanan_btn.BackgroundImageLayout = ImageLayout.Stretch;
             Pesanan_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Pesanan_btn.ForeColor = SystemColors.ControlLightLight;
@@ -187,11 +188,11 @@
             Pesanan_btn.Size = new Size(253, 40);
             Pesanan_btn.TabIndex = 13;
             Pesanan_btn.Text = "Pesanan";
-            Pesanan_btn.UseVisualStyleBackColor = true;
+            Pesanan_btn.UseVisualStyleBackColor = false;
             // 
             // Daftar_pelanggan_btn
             // 
-            Daftar_pelanggan_btn.BackgroundImage = (Image)resources.GetObject("Daftar_pelanggan_btn.BackgroundImage");
+            Daftar_pelanggan_btn.BackColor = Color.Peru;
             Daftar_pelanggan_btn.BackgroundImageLayout = ImageLayout.Stretch;
             Daftar_pelanggan_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Daftar_pelanggan_btn.ForeColor = SystemColors.ControlLightLight;
@@ -200,11 +201,11 @@
             Daftar_pelanggan_btn.Size = new Size(253, 40);
             Daftar_pelanggan_btn.TabIndex = 12;
             Daftar_pelanggan_btn.Text = "Daftar Pelanggan";
-            Daftar_pelanggan_btn.UseVisualStyleBackColor = true;
+            Daftar_pelanggan_btn.UseVisualStyleBackColor = false;
             // 
             // Data_btn
             // 
-            Data_btn.BackgroundImage = (Image)resources.GetObject("Data_btn.BackgroundImage");
+            Data_btn.BackColor = Color.Peru;
             Data_btn.BackgroundImageLayout = ImageLayout.Stretch;
             Data_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Data_btn.ForeColor = SystemColors.ControlLightLight;
@@ -213,11 +214,11 @@
             Data_btn.Size = new Size(253, 40);
             Data_btn.TabIndex = 10;
             Data_btn.Text = "Data Biji Kopi";
-            Data_btn.UseVisualStyleBackColor = true;
+            Data_btn.UseVisualStyleBackColor = false;
             // 
             // Dashboard_btn
             // 
-            Dashboard_btn.BackgroundImage = (Image)resources.GetObject("Dashboard_btn.BackgroundImage");
+            Dashboard_btn.BackColor = Color.Peru;
             Dashboard_btn.BackgroundImageLayout = ImageLayout.Stretch;
             Dashboard_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Dashboard_btn.ForeColor = SystemColors.ControlLightLight;
@@ -226,13 +227,14 @@
             Dashboard_btn.Size = new Size(253, 40);
             Dashboard_btn.TabIndex = 9;
             Dashboard_btn.Text = "Dashboard";
-            Dashboard_btn.UseVisualStyleBackColor = true;
+            Dashboard_btn.UseVisualStyleBackColor = false;
             Dashboard_btn.Click += Dashboard_btn_Click;
             // 
             // Daftar_Pelanggan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Bisque;
             ClientSize = new Size(800, 450);
             Controls.Add(label2);
             Controls.Add(panel2);

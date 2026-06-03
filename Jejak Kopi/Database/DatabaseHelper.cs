@@ -8,7 +8,7 @@ namespace Jejak_Kopi.Database
 {
     public class DatabaseHelper
     {
-        private string connString = "Host=localhost;Port=5432;Database=Jejak_Kopi;Username=postgres;Password=1234";
+        private string connString = "Host=localhost;Port=5432;Database=Jejak_Kopi;Username=postgres;Password=tidakdiketahui";
 
         public NpgsqlConnection GetConnection()
         {

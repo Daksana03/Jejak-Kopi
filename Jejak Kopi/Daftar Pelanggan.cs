@@ -12,7 +12,7 @@ namespace Jejak_Kopi
 {
     public partial class Daftar_Pelanggan : Form
     {
-        private string inuser; 
+        private string inuser;
 
         public Daftar_Pelanggan()
         {
@@ -90,6 +90,11 @@ namespace Jejak_Kopi
             Form3 mainDashboard = new Form3(inuser);
             mainDashboard.Show();
             this.Hide();
+        }
+
+        private void data_pelanggan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
