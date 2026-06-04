@@ -8,7 +8,7 @@ namespace Jejak_Kopi.Database
 {
     public class DatabaseHelper
     {
-        private string connString = "Host=localhost;Port=5432;Database=Jejak_Kopi;Username=postgres;Password=tidakdiketahui";
+        private string connString = "Host=localhost;Port=5432;Database=Jejak_Kopi;Username=postgres;Password=1234";
 
         public NpgsqlConnection GetConnection()
         {
@@ -53,25 +53,29 @@ namespace Jejak_Kopi.Database
         }
 
         // CREATE - Register new user
-        public bool RegisterUser(User user)
+        public (bool success, string message) RegisterUser(User user)
         {
             using var conn = GetConnection();
             conn.Open();
 
-            // Fixed: Changed 'passwords' to 'password' (your actual column name)
-            string query = @"INSERT INTO pengguna (is_admin, nama_lengkap, username, passwords, no_telpon, email, is_delete) 
-                     VALUES (@is_admin, @nama_lengkap, @username, @password, @no_telepon, @email, @is_delete)";
+            string query = "SELECT register_user(@is_admin, @nama_lengkap, @username, @passwords, @no_telepon, @email)";
 
             using var cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@is_admin", user.is_admin);
             cmd.Parameters.AddWithValue("@nama_lengkap", user.nama);
             cmd.Parameters.AddWithValue("@username", user.username);
-            cmd.Parameters.AddWithValue("@password", user.password);
+            cmd.Parameters.AddWithValue("@passwords", user.password);
             cmd.Parameters.AddWithValue("@no_telepon", user.no_telepon);
             cmd.Parameters.AddWithValue("@email", user.email);
-            cmd.Parameters.AddWithValue("@is_delete", user.is_delete);
 
-            return cmd.ExecuteNonQuery() > 0;
+            string jsonResult = (string)cmd.ExecuteScalar();
+
+            // Parse JSON - you'll need Newtonsoft.Json or System.Text.Json
+            using var doc = System.Text.Json.JsonDocument.Parse(jsonResult);
+            bool success = doc.RootElement.GetProperty("success").GetBoolean();
+            string message = doc.RootElement.GetProperty("message").GetString();
+
+            return (success, message);
         }
 
         // READ - Get single user by username

@@ -89,7 +89,7 @@ namespace Jejak_Kopi
                 password = Password.Text.Trim(),
                 no_telepon = No_Telp.Text.Trim(),
                 email = Email.Text.Trim(),
-                is_delete = false
+                //is_delete = false
             };
 
             DatabaseHelper dbHelper = new DatabaseHelper();
@@ -107,20 +107,41 @@ namespace Jejak_Kopi
             // Attempt to register
             try
             {
-                if (dbHelper.RegisterUser(newUser))
+                var result = dbHelper.RegisterUser(newUser);
+
+                if (result.success)
                 {
-                    MessageBox.Show("Registrasi berhasil! Silakan login.",
-                        "Registrasi Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(result.message, "Registrasi Sukses",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // Return to login form
                     Form1 login = new Form1();
                     login.Show();
-                    this.Close();
+                    this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Registrasi gagal! Silakan coba lagi.",
-                        "Registrasi Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(result.message, "Registrasi Gagal",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    // If username already exists, focus on username field
+                    if (result.message.Contains("Username"))
+                    {
+                        Username.Focus();
+                        Username.SelectAll();
+                    }
+                    // If email already exists, focus on email field
+                    else if (result.message.Contains("Email"))
+                    {
+                        Email.Focus();
+                        Email.SelectAll();
+                    }
+                    // If phone already exists, focus on phone field
+                    else if (result.message.Contains("Phone"))
+                    {
+                        No_Telp.Focus();
+                        No_Telp.SelectAll();
+                    }
                 }
             }
             catch (Exception ex)
