@@ -43,7 +43,6 @@
             label4 = new Label();
             pictureBox1 = new PictureBox();
             Logout_btn = new Button();
-            Saldo_btn = new Button();
             Riwayat_btn = new Button();
             Keranjang_btn = new Button();
             Katalog_btn = new Button();
@@ -143,7 +142,6 @@
             panel1.Controls.Add(label4);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(Logout_btn);
-            panel1.Controls.Add(Saldo_btn);
             panel1.Controls.Add(Riwayat_btn);
             panel1.Controls.Add(Keranjang_btn);
             panel1.Controls.Add(Katalog_btn);
@@ -187,19 +185,6 @@
             Logout_btn.Text = "Logout";
             Logout_btn.UseVisualStyleBackColor = false;
             Logout_btn.Click += Logout_btn_Click;
-            // 
-            // Saldo_btn
-            // 
-            Saldo_btn.BackColor = Color.Peru;
-            Saldo_btn.BackgroundImageLayout = ImageLayout.Stretch;
-            Saldo_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Saldo_btn.ForeColor = SystemColors.ControlLightLight;
-            Saldo_btn.Location = new Point(-3, 225);
-            Saldo_btn.Name = "Saldo_btn";
-            Saldo_btn.Size = new Size(253, 40);
-            Saldo_btn.TabIndex = 13;
-            Saldo_btn.Text = "Saldo";
-            Saldo_btn.UseVisualStyleBackColor = false;
             // 
             // Riwayat_btn
             // 
@@ -285,7 +270,6 @@
         private Label label4;
         private PictureBox pictureBox1;
         private Button Logout_btn;
-        private Button Saldo_btn;
         private Button Riwayat_btn;
         private Button Keranjang_btn;
         private Button Katalog_btn;

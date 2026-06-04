@@ -140,6 +140,7 @@
             pictureBox1.Size = new Size(183, 103);
             pictureBox1.TabIndex = 13;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // Password
             // 

@@ -107,6 +107,7 @@
             data_kopi.RowHeadersWidth = 51;
             data_kopi.Size = new Size(472, 256);
             data_kopi.TabIndex = 3;
+            data_kopi.CellContentClick += data_kopi_CellContentClick;
             // 
             // label3
             // 

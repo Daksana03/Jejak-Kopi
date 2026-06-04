@@ -26,5 +26,10 @@ namespace Jejak_Kopi
             daftar.Show();
             this.Hide();
         }
+
+        private void data_kopi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
