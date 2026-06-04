@@ -222,6 +222,58 @@ namespace Jejak_Kopi.Database
                 }
             }
             return dt;
+ 
         }
+
+        public bool TambahKopi(string nama, decimal stok, int harga, string kategori)
+        {
+            using var conn = GetConnection();
+            conn.Open();
+
+            string query =
+                @"CALL tambah_kopi(
+            @nama,
+            @stok,
+            @harga,
+            @kategori)";
+
+            using var cmd = new NpgsqlCommand(query, conn);
+
+            cmd.Parameters.AddWithValue("@nama", nama);
+            cmd.Parameters.AddWithValue("@stok", stok);
+            cmd.Parameters.AddWithValue("@harga", harga);
+            cmd.Parameters.AddWithValue("@kategori", kategori);
+
+            cmd.ExecuteNonQuery();
+
+            return true;
+        }
+
+        public bool EditKopi(int id, string nama, decimal stok, int harga, string kategori)
+        {
+            using var conn = GetConnection();
+            conn.Open();
+
+            string query =
+            @"CALL edit_kopi(
+            @id,
+            @nama,
+            @stok,
+            @harga,
+            @kategori)";
+
+            using var cmd = new NpgsqlCommand(query, conn);
+
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@nama", nama);
+            cmd.Parameters.AddWithValue("@stok", stok);
+            cmd.Parameters.AddWithValue("@harga", harga);
+            cmd.Parameters.AddWithValue("@kategori", kategori);
+
+            cmd.ExecuteNonQuery();
+
+            return true;
+        }
+
     }
 }

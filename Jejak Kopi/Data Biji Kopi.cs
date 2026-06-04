@@ -20,6 +20,8 @@ namespace Jejak_Kopi
             this.adminName = adminName;
             label2.Text = adminName;
             label4.Text = adminName;
+            button1.Click += button1_Click; // Tambah Stok
+            button2.Click += button2_Click; // Edit Stok
 
             dbHelper = new DatabaseHelper();
             LoadDataKopi();   // isi grid saat form dibuka
@@ -94,5 +96,48 @@ namespace Jejak_Kopi
         {
             // bisa dikosongkan atau diisi sesuai kebutuhan
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Kelola_stok formTambah = new Kelola_stok();
+            formTambah.ShowDialog();
+
+            // refresh data setelah form ditutup
+            LoadDataKopi();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (data_kopi.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Pilih data kopi terlebih dahulu!");
+                return;
+            }
+
+            int id = Convert.ToInt32(
+                data_kopi.SelectedRows[0].Cells[0].Value);
+
+            string nama =
+                data_kopi.SelectedRows[0].Cells[1].Value.ToString();
+
+            decimal stok =
+                Convert.ToDecimal(
+                data_kopi.SelectedRows[0].Cells[2].Value);
+
+            int harga =
+                Convert.ToInt32(
+                data_kopi.SelectedRows[0].Cells[3].Value);
+
+            string kategori =
+                data_kopi.SelectedRows[0].Cells[4].Value.ToString();
+
+            Kelola_stok formEdit =
+                new Kelola_stok(id, nama, stok, harga, kategori);
+
+            formEdit.ShowDialog();
+
+            LoadDataKopi();
+        }
+
     }
 }

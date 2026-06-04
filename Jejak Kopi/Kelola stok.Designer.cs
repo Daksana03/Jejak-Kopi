@@ -59,6 +59,7 @@
             tambah_btn.TabIndex = 7;
             tambah_btn.Text = "Tambah";
             tambah_btn.UseVisualStyleBackColor = true;
+            tambah_btn.Click += tambah_btn_Click_1;
             // 
             // edit_btn
             // 
@@ -68,6 +69,7 @@
             edit_btn.TabIndex = 8;
             edit_btn.Text = "Edit";
             edit_btn.UseVisualStyleBackColor = true;
+            edit_btn.Click += edit_btn_Click_1;
             // 
             // kategori
             // 

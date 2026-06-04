@@ -15,7 +15,7 @@ namespace Jejak_Kopi
         private readonly string inusern; // added to store the username passed in
         private FormUtama _induk;
 
-        public Katalog_Kopi_User(FormUtama induk,string usern)
+        public Katalog_Kopi_User(FormUtama induk, string usern)
         {
             InitializeComponent();
             Katalog_Kopi_User_Load();
@@ -23,7 +23,7 @@ namespace Jejak_Kopi
             inusern = usern;
             label2.Text = usern;
             label4.Text = usern;
-            this.inusern = usern; 
+            this.inusern = usern;
             //this.Load += this.Katalog_Kopi_User_Load;
         }
 
@@ -73,7 +73,7 @@ namespace Jejak_Kopi
                 dataGridView1.DataSource = dt;
                 dataGridView1.ReadOnly = true;
                 dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            
+
             }
             catch (Exception ex)
             {
@@ -102,5 +102,9 @@ namespace Jejak_Kopi
             }
         }
 
+        private void tambah_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -105,6 +105,7 @@
             tambah_btn.TabIndex = 16;
             tambah_btn.Text = "Tambah ke Keranjang";
             tambah_btn.UseVisualStyleBackColor = false;
+            tambah_btn.Click += tambah_btn_Click;
             // 
             // label3
             // 
