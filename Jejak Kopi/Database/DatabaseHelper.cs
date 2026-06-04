@@ -2,6 +2,7 @@
 using Npgsql;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 
 namespace Jejak_Kopi.Database
@@ -205,6 +206,22 @@ namespace Jejak_Kopi.Database
                 );
             }
             return null;
+        }
+
+        // Di dalam class DatabaseHelper
+        public DataTable GetDataKopi()
+        {
+            DataTable dt = new DataTable();
+            using (var conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM katalog_tersedia";
+                using (var da = new NpgsqlDataAdapter(query, conn))
+                {
+                    da.Fill(dt);
+                }
+            }
+            return dt;
         }
     }
 }
