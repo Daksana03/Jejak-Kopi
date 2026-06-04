@@ -13,9 +13,31 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
+            if (pictureBox1.BackgroundImage != null)
+            {
+                pictureBox1.BackgroundImage.Dispose();
+                pictureBox1.BackgroundImage = null;
+                //Kembali1.Dispose();
+                //label3.Dispose();
+                //label6.Dispose();
+                //label5.Dispose();
+                //Register2.Dispose();
+                //Username.Dispose();
+                //Nama.Dispose();
+                //label2.Dispose();
+                //pictureBox1.Dispose();
+                //Password.Dispose();
+                //label1.Dispose();
+                //No_Telp.Dispose();
+                //label4.Dispose();
+                //Email.Dispose();
+                //label7.Dispose();
+            }
+
             if (disposing && (components != null))
             {
                 components.Dispose();
+
             }
             base.Dispose(disposing);
         }

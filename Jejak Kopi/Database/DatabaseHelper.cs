@@ -8,8 +8,24 @@ namespace Jejak_Kopi.Database
 {
     public class DatabaseHelper
     {
-        private string connString = "Host=localhost;Port=5432;Database=Jejak_Kopi;Username=postgres;Password=1234";
+        private int cpuCount = Environment.ProcessorCount;
+        private string connString ;
 
+        public DatabaseHelper()
+        {
+            if (cpuCount == 8)
+            {
+                connString = "Host=localhost;Port=5432;Database=Jejak_Kopi;Username=postgres;Password=1234";
+            }
+            else if (cpuCount == 12)
+            {
+                connString = "Host=localhost;Port=5432;Database=Jejak_Kopi;Username=postgres;Password=tidakdiketahui";
+            }
+            else if (cpuCount == 16)
+            {
+                connString = "Host=localhost;Port=5432;Database=Projek_Final;Username=postgres;Password=123";
+            }
+        }
         public NpgsqlConnection GetConnection()
         {
             return new NpgsqlConnection(connString);
