@@ -1,6 +1,7 @@
 using Jejak_Kopi.Database;
 using Microsoft.VisualBasic.Logging;
 using System.Drawing.Text;
+using System.Xml.Serialization;
 
 namespace Jejak_Kopi
 {
@@ -9,6 +10,7 @@ namespace Jejak_Kopi
         public Form1()
         {
             InitializeComponent();
+            this.AcceptButton = Login1;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -20,6 +22,36 @@ namespace Jejak_Kopi
         {
 
         }
+
+        //private void Password_focus(object sender, EventArgs e)
+        //{
+        //    this.contr += Password.Focus;
+        //}
+
+
+        private void _PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+
+        {
+                if (e.KeyCode == Keys.Down || e.KeyCode == Keys.Up)
+                {
+                    e.IsInputKey = true;
+                }
+
+
+        }
+
+        private void Pindah(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                SelectNextControl((Control)sender, true, true, true, true);
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                SelectNextControl((Control)sender, false, true, true, true);
+            }
+        }
+        
 
         private void Login1_Click(object sender, EventArgs e)
         {
