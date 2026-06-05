@@ -44,7 +44,7 @@ namespace Jejak_Kopi
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Logout_btn_Click1(object sender, EventArgs e)
@@ -58,6 +58,13 @@ namespace Jejak_Kopi
         {
             Data_Biji_Kopi kopi = new Data_Biji_Kopi(adminName);
             kopi.Show();
+            this.Hide();
+        }
+
+        private void Pesanan_btn_Click(object sender, EventArgs e)
+        {
+            Pesanan pesanan = new Pesanan();
+            pesanan.Show();
             this.Hide();
         }
     }

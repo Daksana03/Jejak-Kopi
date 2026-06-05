@@ -1,6 +1,6 @@
 ﻿namespace Jejak_Kopi
 {
-    partial class Form3
+    partial class Pesanan
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pesanan));
+            status_btn = new Panel();
+            button1 = new Button();
+            dataGridView1 = new DataGridView();
+            label3 = new Label();
+            label1 = new Label();
             panel1 = new Panel();
             label4 = new Label();
             pictureBox1 = new PictureBox();
@@ -38,16 +43,65 @@
             Daftar_pelanggan_btn = new Button();
             Data_btn = new Button();
             Dashboard_btn = new Button();
-            panel2 = new Panel();
-            dataGridView1 = new DataGridView();
-            label3 = new Label();
-            label1 = new Label();
-            label2 = new Label();
+            status_btn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
+            // 
+            // status_btn
+            // 
+            status_btn.BackColor = Color.Linen;
+            status_btn.Controls.Add(button1);
+            status_btn.Controls.Add(dataGridView1);
+            status_btn.Controls.Add(label3);
+            status_btn.Location = new Point(250, 56);
+            status_btn.Name = "status_btn";
+            status_btn.Size = new Size(550, 396);
+            status_btn.TabIndex = 5;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Peru;
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ControlLightLight;
+            button1.Location = new Point(381, 338);
+            button1.Name = "button1";
+            button1.Size = new Size(138, 40);
+            button1.TabIndex = 16;
+            button1.Text = "Ubah Status";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(35, 25);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(484, 291);
+            dataGridView1.TabIndex = 3;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(163, 36);
+            label3.Name = "label3";
+            label3.Size = new Size(0, 34);
+            label3.TabIndex = 2;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(413, 11);
+            label1.Name = "label1";
+            label1.Size = new Size(241, 34);
+            label1.TabIndex = 2;
+            label1.Text = "Pesanan Pelanggan";
             // 
             // panel1
             // 
@@ -60,10 +114,10 @@
             panel1.Controls.Add(Daftar_pelanggan_btn);
             panel1.Controls.Add(Data_btn);
             panel1.Controls.Add(Dashboard_btn);
-            panel1.Location = new Point(2, -1);
+            panel1.Location = new Point(1, -2);
             panel1.Name = "panel1";
             panel1.Size = new Size(250, 451);
-            panel1.TabIndex = 0;
+            panel1.TabIndex = 3;
             // 
             // label4
             // 
@@ -98,7 +152,6 @@
             Logout_btn.TabIndex = 15;
             Logout_btn.Text = "Logout";
             Logout_btn.UseVisualStyleBackColor = false;
-            Logout_btn.Click += Logout_btn_Click1;
             // 
             // Laporan_btn
             // 
@@ -125,7 +178,6 @@
             Pesanan_btn.TabIndex = 13;
             Pesanan_btn.Text = "Pesanan";
             Pesanan_btn.UseVisualStyleBackColor = false;
-            Pesanan_btn.Click += Pesanan_btn_Click;
             // 
             // Daftar_pelanggan_btn
             // 
@@ -139,7 +191,6 @@
             Daftar_pelanggan_btn.TabIndex = 12;
             Daftar_pelanggan_btn.Text = "Daftar Pelanggan";
             Daftar_pelanggan_btn.UseVisualStyleBackColor = false;
-            Daftar_pelanggan_btn.Click += button1_Click;
             // 
             // Data_btn
             // 
@@ -153,7 +204,6 @@
             Data_btn.TabIndex = 10;
             Data_btn.Text = "Data Biji Kopi";
             Data_btn.UseVisualStyleBackColor = false;
-            Data_btn.Click += Data_btn_Click;
             // 
             // Dashboard_btn
             // 
@@ -168,100 +218,41 @@
             Dashboard_btn.Text = "Dashboard";
             Dashboard_btn.UseVisualStyleBackColor = false;
             // 
-            // panel2
-            // 
-            panel2.BackColor = Color.Linen;
-            panel2.Controls.Add(dataGridView1);
-            panel2.Controls.Add(label3);
-            panel2.Location = new Point(251, 80);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(550, 373);
-            panel2.TabIndex = 1;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(21, 108);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(517, 250);
-            dataGridView1.TabIndex = 3;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(163, 36);
-            label3.Name = "label3";
-            label3.Size = new Size(240, 34);
-            label3.TabIndex = 2;
-            label3.Text = "Statistik Penjualan:";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(336, 20);
-            label1.Name = "label1";
-            label1.Size = new Size(202, 34);
-            label1.TabIndex = 0;
-            label1.Text = "Selamat Datang";
-            label1.Click += label1_Click_1;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(544, 20);
-            label2.Name = "label2";
-            label2.Size = new Size(175, 34);
-            label2.TabIndex = 1;
-            label2.Text = "Lorem Ipsum";
-            // 
-            // Form3
+            // Pesanan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoSize = true;
-            AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            BackColor = Color.Bisque;
-            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
-            Controls.Add(label2);
-            Controls.Add(panel2);
+            Controls.Add(status_btn);
             Controls.Add(label1);
             Controls.Add(panel1);
-            Name = "Form3";
-            Text = "Halaman Utama";
-            Load += Form3_Load;
+            Name = "Pesanan";
+            Text = "Pesanan";
+            status_btn.ResumeLayout(false);
+            status_btn.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
-
-
         #endregion
 
-        private Panel panel1;
-        private Panel panel2;
-        private Label label2;
+        private Panel status_btn;
+        private Button button1;
+        private DataGridView dataGridView1;
+        private Label label3;
         private Label label1;
-        private Button Data_btn;
-        private Button Dashboard_btn;
-        private Button Daftar_pelanggan_btn;
+        private Panel panel1;
+        private Label label4;
+        private PictureBox pictureBox1;
+        private Button Logout_btn;
         private Button Laporan_btn;
         private Button Pesanan_btn;
-        private Button Logout_btn;
-        private Label label3;
-        private PictureBox pictureBox1;
-        private Label label4;
-        private DataGridView dataGridView1;
+        private Button Daftar_pelanggan_btn;
+        private Button Data_btn;
+        private Button Dashboard_btn;
     }
 }

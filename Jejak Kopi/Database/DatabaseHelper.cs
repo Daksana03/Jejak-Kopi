@@ -291,5 +291,47 @@ namespace Jejak_Kopi.Database
             return true;
         }
 
+        public DataTable GetPesanan()
+        {
+            DataTable dt = new DataTable();
+
+            using (var conn = GetConnection())
+            {
+                conn.Open();
+
+                string query = "SELECT * FROM daftar_pesanan";
+
+                using (var da = new NpgsqlDataAdapter(query, conn))
+                {
+                    da.Fill(dt);
+                }
+            }
+
+            return dt;
+        }
+
+        public bool UbahStatusPesanan(
+            int idPesanan,
+            string status)
+        {
+            using var conn = GetConnection();
+            conn.Open();
+
+            string query =
+                @"CALL ubah_status_pesanan(
+            @id,
+            @status)";
+
+            using var cmd =
+                new NpgsqlCommand(query, conn);
+
+            cmd.Parameters.AddWithValue("@id", idPesanan);
+            cmd.Parameters.AddWithValue("@status", status);
+
+            cmd.ExecuteNonQuery();
+
+            return true;
+        }
+
     }
 }
