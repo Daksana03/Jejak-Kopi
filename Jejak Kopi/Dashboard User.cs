@@ -78,7 +78,11 @@ namespace Jejak_Kopi
             //Katalog_Kopi_User kopiUser = new Katalog_Kopi_User(usern);
             //kopiUser.Show();
             //this.Hide();
-
+            if (_induk != null)
+            {
+                //_induk.BukaPanel(new Katalog_Kopi_User(_induk ,usern));
+                _induk.BukaPanel(_induk.FormKatalogUser);
+            }
         }
     }
 }
