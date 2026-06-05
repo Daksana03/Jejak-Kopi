@@ -16,10 +16,10 @@ namespace Jejak_Kopi
             if (_isInitialized) return;
             _isInitialized = true;
 
-            // Hook into existing and future forms
+            // Memasang hook ke form yang sudah ada saat inisialisasi awal
             Application.OpenForms.Cast<Form>().ToList().ForEach(HookForm);
 
-            // Hook into forms that will be created later
+            // Memasang hook secara dinamis ke form-form baru yang dibuka kemudian
             Application.Idle += OnApplicationIdle;
         }
 
@@ -39,7 +39,7 @@ namespace Jejak_Kopi
             if (form.Tag?.ToString() == "GlobalHooked") return;
 
             form.FormClosing += OnFormClosing;
-            form.Tag = "GlobalHooked"; // Mark as hooked
+            form.Tag = "GlobalHooked"; // Menandai bahwa form sudah dipasang penangan close
         }
 
         private static bool IsFormHooked(Form form)
@@ -51,10 +51,25 @@ namespace Jejak_Kopi
         {
             if (_isClosing) return;
 
+            // Hanya bertindak jika aksi penutupan dipicu langsung oleh tombol 'X' Windows oleh User
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                e.Cancel = true;
-                CloseAllForms();
+                Form formYangDitutup = sender as Form;
+
+                // Menghitung berapa banyak form yang SAAT INI sedang tampil/terbuka di layar, 
+                // di luar form yang saat ini sedang dalam proses menutup.
+                int formTerbukaLainnya = Application.OpenForms.Cast<Form>()
+                    .Count(f => f.Visible && f != formYangDitutup);
+
+                // JIKA tidak ada form lain yang sedang tampil (ini adalah form aktif terakhir),
+                // MAKA bersihkan memori dan tutup seluruh aplikasi secara aman.
+                if (formTerbukaLainnya == 0)
+                {
+                    e.Cancel = true;
+                    CloseAllForms();
+                }
+                // JIKA masih ada form lain yang terbuka (misal perpindahan form via navigasi .Show() dan .Hide()), 
+                // biarkan form tersebut menutup sendiri tanpa memicu penutupan masal.
             }
         }
 
@@ -67,7 +82,7 @@ namespace Jejak_Kopi
             {
                 if (!form.IsDisposed)
                 {
-                    form.FormClosing -= OnFormClosing; // Prevent recursion
+                    form.FormClosing -= OnFormClosing; // Mencegah terjadinya rekursi/perulangan tak terbatas
                     form.Close();
                 }
             }

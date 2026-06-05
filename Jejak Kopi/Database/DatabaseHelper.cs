@@ -208,7 +208,6 @@ namespace Jejak_Kopi.Database
             return null;
         }
 
-        // Di dalam class DatabaseHelper
         public DataTable GetDataKopi()
         {
             DataTable dt = new DataTable();
@@ -223,6 +222,38 @@ namespace Jejak_Kopi.Database
             }
             return dt;
  
+        }
+
+        public DataTable GetKopiUser()
+        {
+            DataTable dt = new DataTable();
+            using (var conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM kopi";
+                using (var da = new NpgsqlDataAdapter(query, conn))
+                {
+                    da.Fill(dt);
+                }
+            }
+            return dt;
+
+        }
+
+        public DataTable GetStat()
+        {
+            DataTable dt = new DataTable();
+            using (var conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM v_statistik_biji_kopi";
+                using (var da = new NpgsqlDataAdapter(query, conn))
+                {
+                    da.Fill(dt);
+                }
+            }
+            return dt;
+
         }
 
         public bool TambahKopi(string nama, decimal stok, int harga, string kategori)

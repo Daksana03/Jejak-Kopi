@@ -78,7 +78,7 @@
             Kembali1.Location = new Point(37, 435);
             Kembali1.Name = "Kembali1";
             Kembali1.Size = new Size(94, 29);
-            Kembali1.TabIndex = 22;
+            Kembali1.TabIndex = 29;
             Kembali1.Text = "Kembali";
             Kembali1.UseVisualStyleBackColor = false;
             Kembali1.Click += Kembali1_Click;
@@ -122,7 +122,7 @@
             Register2.Location = new Point(280, 435);
             Register2.Name = "Register2";
             Register2.Size = new Size(94, 29);
-            Register2.TabIndex = 18;
+            Register2.TabIndex = 30;
             Register2.Text = "Register";
             Register2.UseVisualStyleBackColor = false;
             Register2.Click += Register2_Click_1;
@@ -133,6 +133,8 @@
             Username.Name = "Username";
             Username.Size = new Size(323, 27);
             Username.TabIndex = 16;
+            Username.KeyDown += Pindah;
+            Username.PreviewKeyDown += _PreviewKeyDown;
             // 
             // Nama
             // 
@@ -141,6 +143,8 @@
             Nama.Size = new Size(323, 27);
             Nama.TabIndex = 15;
             Nama.TextChanged += Username_TextChanged;
+            Nama.KeyDown += Pindah;
+            Nama.PreviewKeyDown += _PreviewKeyDown;
             // 
             // label2
             // 
@@ -170,6 +174,8 @@
             Password.Name = "Password";
             Password.Size = new Size(323, 27);
             Password.TabIndex = 24;
+            Password.KeyDown += Pindah;
+            Password.PreviewKeyDown += _PreviewKeyDown;
             // 
             // label1
             // 
@@ -187,6 +193,8 @@
             No_Telp.Name = "No_Telp";
             No_Telp.Size = new Size(323, 27);
             No_Telp.TabIndex = 26;
+            No_Telp.KeyDown += Pindah;
+            No_Telp.PreviewKeyDown += _PreviewKeyDown;
             // 
             // label4
             // 
@@ -204,6 +212,8 @@
             Email.Name = "Email";
             Email.Size = new Size(323, 27);
             Email.TabIndex = 28;
+            Email.KeyDown += Pindah;
+            Email.PreviewKeyDown += _PreviewKeyDown;
             // 
             // label7
             // 

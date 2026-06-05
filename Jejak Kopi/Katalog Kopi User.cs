@@ -14,10 +14,12 @@ namespace Jejak_Kopi
     {
         private readonly string inusern; // added to store the username passed in
         private FormUtama _induk;
+        private readonly DatabaseHelper dbHelper;
 
         public Katalog_Kopi_User(FormUtama induk, string usern)
         {
             InitializeComponent();
+            dbHelper = new DatabaseHelper();
             Katalog_Kopi_User_Load();
             _induk = induk;
             inusern = usern;
@@ -31,16 +33,16 @@ namespace Jejak_Kopi
         {
             try
             {
-                string query = "SELECT * FROM kopi";
+                //string query = "SELECT * FROM kopi";
 
-                DataTable dt = new(); // simplified 'new' expression
+                DataTable dt = dbHelper.GetKopiUser(); // simplified 'new' expression
 
-                using var conn = new Jejak_Kopi.Database.DatabaseHelper().GetConnection(); // 'using var' is shorter
-                conn.Open();
-                using (NpgsqlDataAdapter da = new NpgsqlDataAdapter(query, conn))
-                {
-                    da.Fill(dt);
-                }
+                //using var conn = new Jejak_Kopi.Database.DatabaseHelper().GetConnection(); // 'using var' is shorter
+                //conn.Open();
+                //using (NpgsqlDataAdapter da = new NpgsqlDataAdapter(query, conn))
+                //{
+                //    da.Fill(dt);
+                //}
 
                 dataGridView1.DataSource = null;
                 dataGridView1.AutoGenerateColumns = false;

@@ -48,17 +48,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             label2 = new Label();
             Username = new TextBox();
             Password = new TextBox();
             label4 = new Label();
+            Register1 = new Button();
             Login1 = new Button();
             pictureBox1 = new PictureBox();
             label5 = new Label();
             label6 = new Label();
             label3 = new Label();
-            Register1 = new Button();
+            //contextMenuStrip1 = new ContextMenuStrip(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -79,6 +81,8 @@
             Username.Name = "Username";
             Username.Size = new Size(277, 27);
             Username.TabIndex = 3;
+            Username.KeyDown += Pindah;
+            Username.PreviewKeyDown += _PreviewKeyDown;
             // 
             // Password
             // 
@@ -86,6 +90,8 @@
             Password.Name = "Password";
             Password.Size = new Size(277, 27);
             Password.TabIndex = 4;
+            Password.KeyDown += Pindah;
+            Password.PreviewKeyDown += _PreviewKeyDown;
             // 
             // label4
             // 
@@ -97,6 +103,20 @@
             label4.TabIndex = 6;
             label4.Text = "Belum Punya Akun?";
             // 
+            // Register1
+            // 
+            Register1.BackColor = Color.Peru;
+            Register1.BackgroundImageLayout = ImageLayout.Stretch;
+            Register1.Font = new Font("Times New Roman", 9F);
+            Register1.ForeColor = SystemColors.ControlLightLight;
+            Register1.Location = new Point(198, 307);
+            Register1.Name = "Register1";
+            Register1.Size = new Size(94, 29);
+            Register1.TabIndex = 12;
+            Register1.Text = "Register";
+            Register1.UseVisualStyleBackColor = false;
+            Register1.Click += Register1_Click;
+            // 
             // Login1
             // 
             Login1.BackColor = Color.Peru;
@@ -106,7 +126,7 @@
             Login1.Location = new Point(234, 364);
             Login1.Name = "Login1";
             Login1.Size = new Size(94, 29);
-            Login1.TabIndex = 8;
+            Login1.TabIndex = 13;
             Login1.Text = "Login";
             Login1.UseVisualStyleBackColor = false;
             Login1.Click += Login1_Click;
@@ -152,20 +172,12 @@
             label3.TabIndex = 11;
             label3.Text = "Username";
             // 
-            // Register1
+            // contextMenuStrip1
             // 
-            Register1.BackColor = Color.Peru;
-            Register1.BackgroundImageLayout = ImageLayout.Stretch;
-            Register1.Font = new Font("Times New Roman", 9F);
-            Register1.ForeColor = SystemColors.ControlLightLight;
-            Register1.Location = new Point(198, 307);
-            Register1.Name = "Register1";
-            Register1.Size = new Size(94, 29);
-            Register1.TabIndex = 12;
-            Register1.Text = "Register";
-            Register1.UseVisualStyleBackColor = false;
-            Register1.Click += Register1_Click;
-            // 
+            //contextMenuStrip1.ImageScalingSize = new Size(20, 20);
+            //contextMenuStrip1.Name = "contextMenuStrip1";
+            //contextMenuStrip1.Size = new Size(61, 4);
+            //// 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -189,17 +201,19 @@
             PerformLayout();
         }
 
+
         #endregion
         private Label label2;
         private TextBox Username;
         private TextBox Password;
         private Label label4;
+        private Button Register1;
         private Button Login1;
-        private Button button2;
+        //private Button button2;
         private PictureBox pictureBox1;
         private Label label5;
         private Label label6;
         private Label label3;
-        private Button Register1;
+        //private ContextMenuStrip contextMenuStrip1; ???
     }
 }

@@ -68,9 +68,11 @@ namespace Jejak_Kopi
 
         private void Logout_btn_Click(object sender, EventArgs e)
         {
-            Form1 login = new Form1();
-            login.Show();
-            this.Close();
+            //Form1 login = new Form1();
+            //login.Show();
+            //this.Close();
+            //this.Dispose();
+            Application.Restart();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -78,7 +80,11 @@ namespace Jejak_Kopi
             //Katalog_Kopi_User kopiUser = new Katalog_Kopi_User(usern);
             //kopiUser.Show();
             //this.Hide();
-
+            if (_induk != null)
+            {
+                //_induk.BukaPanel(new Katalog_Kopi_User(_induk ,usern));
+                _induk.BukaPanel(_induk.FormKatalogUser);
+            }
         }
 
         private void Dashboard_btn_Click(object sender, EventArgs e)

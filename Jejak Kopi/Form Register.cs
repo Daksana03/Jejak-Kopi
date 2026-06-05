@@ -16,6 +16,27 @@ namespace Jejak_Kopi
             InitializeComponent();
         }
 
+        private void _PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+
+        {
+            if (e.KeyCode == Keys.Down || e.KeyCode == Keys.Up)
+            {
+                e.IsInputKey = true;
+            }
+        }
+
+        private void Pindah(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                SelectNextControl((Control)sender, true, true, true, true);
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                SelectNextControl((Control)sender, false, true, true, true);
+            }
+        }
+
         private void Username_TextChanged(object sender, EventArgs e)
         {
 
