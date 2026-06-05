@@ -20,8 +20,8 @@ namespace Jejak_Kopi
             this.adminName = adminName;
             label2.Text = adminName;
             label4.Text = adminName;
-            edit_btn.Click += button2_Click_1;
-            btn_tambah.Click += button1_Click_1;
+            //edit_btn.Click += button2_Click_1;
+            //btn_tambah.Click += button1_Click_1;
 
             dbHelper = new DatabaseHelper();
             LoadDataKopi();   // isi grid saat form dibuka
@@ -100,7 +100,7 @@ namespace Jejak_Kopi
         private void button1_Click_1(object sender, EventArgs e)
         {
             Tambah_Kopi formTambah = new Tambah_Kopi();
-            formTambah.ShowDialog();
+            formTambah.Show();
 
             // refresh data setelah form ditutup
             LoadDataKopi();
