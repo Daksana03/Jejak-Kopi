@@ -33,8 +33,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Katalog_Kopi_User));
             label2 = new Label();
             panel2 = new Panel();
-            label5 = new Label();
-            textBox1 = new TextBox();
             tambah_btn = new Button();
             label3 = new Label();
             dataGridView1 = new DataGridView();
@@ -66,8 +64,6 @@
             // panel2
             // 
             panel2.BackColor = Color.Linen;
-            panel2.Controls.Add(label5);
-            panel2.Controls.Add(textBox1);
             panel2.Controls.Add(tambah_btn);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(dataGridView1);
@@ -75,23 +71,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(550, 383);
             panel2.TabIndex = 20;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(102, 312);
-            label5.Name = "label5";
-            label5.Size = new Size(153, 22);
-            label5.TabIndex = 23;
-            label5.Text = "Kuantitas (Gram):";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(102, 337);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(154, 27);
-            textBox1.TabIndex = 22;
             // 
             // tambah_btn
             // 
@@ -149,7 +128,7 @@
             panel1.Controls.Add(Dashboard_btn);
             panel1.Location = new Point(1, -4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(250, 459);
+            panel1.Size = new Size(250, 455);
             panel1.TabIndex = 18;
             // 
             // label4
@@ -225,6 +204,7 @@
             Katalog_btn.TabIndex = 10;
             Katalog_btn.Text = "Katalog Kopi";
             Katalog_btn.UseVisualStyleBackColor = false;
+            Katalog_btn.Click += Katalog_btn_Click;
             // 
             // Dashboard_btn
             // 
@@ -278,7 +258,5 @@
         private DataGridView dataGridView1;
         private Button tambah_btn;
         private Label label3;
-        private Label label5;
-        private TextBox textBox1;
     }
 }

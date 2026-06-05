@@ -80,5 +80,10 @@ namespace Jejak_Kopi
             //this.Hide();
 
         }
+
+        private void Dashboard_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

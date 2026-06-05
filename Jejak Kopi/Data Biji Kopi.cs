@@ -20,8 +20,8 @@ namespace Jejak_Kopi
             this.adminName = adminName;
             label2.Text = adminName;
             label4.Text = adminName;
-            button1.Click += button1_Click; // Tambah Stok
-            button2.Click += button2_Click; // Edit Stok
+            edit_btn.Click += button2_Click_1;
+            btn_tambah.Click += button1_Click_1;
 
             dbHelper = new DatabaseHelper();
             LoadDataKopi();   // isi grid saat form dibuka
@@ -97,16 +97,16 @@ namespace Jejak_Kopi
             // bisa dikosongkan atau diisi sesuai kebutuhan
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            Kelola_stok formTambah = new Kelola_stok();
+            Tambah_Kopi formTambah = new Tambah_Kopi();
             formTambah.ShowDialog();
 
             // refresh data setelah form ditutup
             LoadDataKopi();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e)
         {
             if (data_kopi.SelectedRows.Count == 0)
             {
@@ -139,5 +139,11 @@ namespace Jejak_Kopi
             LoadDataKopi();
         }
 
+        private void Dashboard_btn_Click(object sender, EventArgs e)
+        {
+            Form3 mainDashboard = new Form3(this.adminName);
+            mainDashboard.Show();
+            this.Hide();
+        }
     }
 }

@@ -106,5 +106,10 @@ namespace Jejak_Kopi
         {
 
         }
+
+        private void Katalog_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

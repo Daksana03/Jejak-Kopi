@@ -275,5 +275,21 @@ namespace Jejak_Kopi.Database
             return true;
         }
 
+        public bool HapusKopi(int id)
+        {
+            using var conn = GetConnection();
+            conn.Open();
+
+            string query = @"CALL hapus_kopi(@id)";
+
+            using var cmd = new NpgsqlCommand(query, conn);
+
+            cmd.Parameters.AddWithValue("@id", id);
+
+            cmd.ExecuteNonQuery();
+
+            return true;
+        }
+
     }
 }

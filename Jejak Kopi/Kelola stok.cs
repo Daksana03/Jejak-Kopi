@@ -30,21 +30,6 @@ namespace Jejak_Kopi
             kategori.Text = kategoriValue;
         }
 
-        private void tambah_btn_Click_1(object sender, EventArgs e)
-        {
-            bool result = db.TambahKopi(
-            nama_kopi.Text,
-            decimal.Parse(stok.Text),
-            int.Parse(harga.Text),
-            kategori.Text);
-
-            if (result)
-            {
-                MessageBox.Show("Data berhasil ditambahkan");
-                Close();
-            }
-        }
-
         private void edit_btn_Click_1(object sender, EventArgs e)
         {
             bool result = db.EditKopi(
@@ -57,6 +42,26 @@ namespace Jejak_Kopi
             {
                 MessageBox.Show("Data berhasil diupdate");
                 Close();
+            }
+        }
+
+        private void hapus_btn_Click(object sender, EventArgs e)
+        {
+            DialogResult konfirmasi = MessageBox.Show(
+        "Yakin ingin menghapus data kopi ini?",
+        "Konfirmasi Hapus",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Question);
+
+            if (konfirmasi == DialogResult.Yes)
+            {
+                bool result = db.HapusKopi(idKatalog);
+
+                if (result)
+                {
+                    MessageBox.Show("Data berhasil dihapus");
+                    Close();
+                }
             }
         }
     }

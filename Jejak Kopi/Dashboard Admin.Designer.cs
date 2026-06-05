@@ -62,7 +62,7 @@
             panel1.Controls.Add(Dashboard_btn);
             panel1.Location = new Point(2, -1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(250, 459);
+            panel1.Size = new Size(250, 451);
             panel1.TabIndex = 0;
             // 
             // label4
@@ -226,7 +226,7 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.Bisque;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(800, 451);
+            ClientSize = new Size(800, 450);
             Controls.Add(label2);
             Controls.Add(panel2);
             Controls.Add(label1);

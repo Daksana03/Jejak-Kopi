@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Data_Biji_Kopi));
             label2 = new Label();
             panel2 = new Panel();
-            button2 = new Button();
-            button1 = new Button();
+            edit_btn = new Button();
+            btn_tambah = new Button();
             data_kopi = new DataGridView();
             label3 = new Label();
             label1 = new Label();
@@ -64,8 +64,8 @@
             // panel2
             // 
             panel2.BackColor = Color.Linen;
-            panel2.Controls.Add(button2);
-            panel2.Controls.Add(button1);
+            panel2.Controls.Add(edit_btn);
+            panel2.Controls.Add(btn_tambah);
             panel2.Controls.Add(data_kopi);
             panel2.Controls.Add(label3);
             panel2.Location = new Point(250, 77);
@@ -73,31 +73,33 @@
             panel2.Size = new Size(550, 373);
             panel2.TabIndex = 5;
             // 
-            // button2
+            // edit_btn
             // 
-            button2.BackColor = Color.Peru;
-            button2.BackgroundImageLayout = ImageLayout.Stretch;
-            button2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Location = new Point(251, 315);
-            button2.Name = "button2";
-            button2.Size = new Size(127, 40);
-            button2.TabIndex = 17;
-            button2.Text = "Edit Stok";
-            button2.UseVisualStyleBackColor = false;
+            edit_btn.BackColor = Color.Peru;
+            edit_btn.BackgroundImageLayout = ImageLayout.Stretch;
+            edit_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            edit_btn.ForeColor = SystemColors.ControlLightLight;
+            edit_btn.Location = new Point(251, 315);
+            edit_btn.Name = "edit_btn";
+            edit_btn.Size = new Size(127, 40);
+            edit_btn.TabIndex = 17;
+            edit_btn.Text = "Edit Stok";
+            edit_btn.UseVisualStyleBackColor = false;
+            edit_btn.Click += button2_Click_1;
             // 
-            // button1
+            // btn_tambah
             // 
-            button1.BackColor = Color.Peru;
-            button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(384, 315);
-            button1.Name = "button1";
-            button1.Size = new Size(127, 40);
-            button1.TabIndex = 16;
-            button1.Text = "Tambah Stok";
-            button1.UseVisualStyleBackColor = false;
+            btn_tambah.BackColor = Color.Peru;
+            btn_tambah.BackgroundImageLayout = ImageLayout.Stretch;
+            btn_tambah.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_tambah.ForeColor = SystemColors.ControlLightLight;
+            btn_tambah.Location = new Point(384, 315);
+            btn_tambah.Name = "btn_tambah";
+            btn_tambah.Size = new Size(127, 40);
+            btn_tambah.TabIndex = 16;
+            btn_tambah.Text = "Tambah Stok";
+            btn_tambah.UseVisualStyleBackColor = false;
+            btn_tambah.Click += button1_Click_1;
             // 
             // data_kopi
             // 
@@ -243,6 +245,7 @@
             Dashboard_btn.TabIndex = 9;
             Dashboard_btn.Text = "Dashboard";
             Dashboard_btn.UseVisualStyleBackColor = false;
+            Dashboard_btn.Click += Dashboard_btn_Click;
             // 
             // Data_Biji_Kopi
             // 
@@ -280,8 +283,8 @@
         private Button Daftar_pelanggan_btn;
         private Button Data_btn;
         private Button Dashboard_btn;
-        private Button button1;
+        private Button btn_tambah;
         private DataGridView data_kopi;
-        private Button button2;
+        private Button edit_btn;
     }
 }
