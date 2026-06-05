@@ -65,9 +65,12 @@ namespace Jejak_Kopi
 
         private void Register1_Click(object sender, EventArgs e)
         {
-            Form2 regist = new Form2();
-            regist.Show();
-            this.Hide();
+            using (Form2 regist = new Form2())
+            {
+                this.Hide();
+                regist.ShowDialog();
+            }
+            this.Show();
         }
 
         //protected override void OnFormClosing(FormClosingEventArgs e)

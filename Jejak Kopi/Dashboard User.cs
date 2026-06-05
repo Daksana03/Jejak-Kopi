@@ -84,5 +84,10 @@ namespace Jejak_Kopi
                 _induk.BukaPanel(_induk.FormKatalogUser);
             }
         }
+
+        private void Dashboard_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

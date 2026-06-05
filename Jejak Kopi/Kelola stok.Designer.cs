@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            tambah_btn = new Button();
             edit_btn = new Button();
             kategori = new TextBox();
             label3 = new Label();
@@ -39,6 +38,7 @@
             label4 = new Label();
             label5 = new Label();
             nama_kopi = new TextBox();
+            hapus_btn = new Button();
             SuspendLayout();
             // 
             // label1
@@ -51,23 +51,15 @@
             label1.TabIndex = 6;
             label1.Text = "Pengelolaan Stok Kopi";
             // 
-            // tambah_btn
-            // 
-            tambah_btn.Location = new Point(311, 299);
-            tambah_btn.Name = "tambah_btn";
-            tambah_btn.Size = new Size(94, 29);
-            tambah_btn.TabIndex = 7;
-            tambah_btn.Text = "Tambah";
-            tambah_btn.UseVisualStyleBackColor = true;
-            // 
             // edit_btn
             // 
-            edit_btn.Location = new Point(200, 299);
+            edit_btn.Location = new Point(311, 298);
             edit_btn.Name = "edit_btn";
             edit_btn.Size = new Size(94, 29);
             edit_btn.TabIndex = 8;
             edit_btn.Text = "Edit";
             edit_btn.UseVisualStyleBackColor = true;
+            edit_btn.Click += edit_btn_Click_1;
             // 
             // kategori
             // 
@@ -139,12 +131,23 @@
             nama_kopi.Size = new Size(262, 27);
             nama_kopi.TabIndex = 15;
             // 
+            // hapus_btn
+            // 
+            hapus_btn.Location = new Point(197, 298);
+            hapus_btn.Name = "hapus_btn";
+            hapus_btn.Size = new Size(94, 29);
+            hapus_btn.TabIndex = 17;
+            hapus_btn.Text = "Hapus";
+            hapus_btn.UseVisualStyleBackColor = true;
+            hapus_btn.Click += hapus_btn_Click;
+            // 
             // Kelola_stok
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PeachPuff;
             ClientSize = new Size(438, 349);
+            Controls.Add(hapus_btn);
             Controls.Add(label5);
             Controls.Add(nama_kopi);
             Controls.Add(stok);
@@ -154,7 +157,6 @@
             Controls.Add(label3);
             Controls.Add(kategori);
             Controls.Add(edit_btn);
-            Controls.Add(tambah_btn);
             Controls.Add(label1);
             Name = "Kelola_stok";
             Text = "Kelola_stok";
@@ -165,7 +167,6 @@
         #endregion
 
         private Label label1;
-        private Button tambah_btn;
         private Button edit_btn;
         private TextBox kategori;
         private Label label3;
@@ -175,5 +176,6 @@
         private Label label4;
         private Label label5;
         private TextBox nama_kopi;
+        private Button hapus_btn;
     }
 }

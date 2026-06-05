@@ -62,7 +62,7 @@
             panel1.Controls.Add(Dashboard_btn);
             panel1.Location = new Point(2, -1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(250, 459);
+            panel1.Size = new Size(250, 451);
             panel1.TabIndex = 0;
             // 
             // label4
@@ -180,10 +180,10 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(21, 73);
+            dataGridView1.Location = new Point(21, 108);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(517, 285);
+            dataGridView1.Size = new Size(517, 250);
             dataGridView1.TabIndex = 3;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -226,7 +226,7 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.Bisque;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(800, 451);
+            ClientSize = new Size(800, 450);
             Controls.Add(label2);
             Controls.Add(panel2);
             Controls.Add(label1);

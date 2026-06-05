@@ -28,14 +28,14 @@ namespace Jejak_Kopi
 
         private void Register2_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void Kembali1_Click(object sender, EventArgs e)
         {
-            Form1 login = new Form1();
-            login.ShowDialog();
-            //this.Close();
+            //Form1 login = new Form1();
+            //login.ShowDialog();
+            this.Close();
         }
 
         private void Register2_Click_1(object sender, EventArgs e)
@@ -149,6 +149,11 @@ namespace Jejak_Kopi
                 MessageBox.Show($"Error: {ex.Message}", "Database Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
 
         }
     }
