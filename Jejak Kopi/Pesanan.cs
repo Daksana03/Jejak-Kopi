@@ -47,28 +47,13 @@ namespace Jejak_Kopi
                 dataGridView1.SelectedRows[0]
                 .Cells["id_pesanan"].Value);
 
-            string statusBaru =
-                Microsoft.VisualBasic.Interaction.InputBox(
-                    "Masukkan status baru\n" +
-                    "(diproses/dikirim/selesai)",
-                    "Ubah Status");
+            Status_pesanan form =
+                new Status_pesanan(idPesanan);
 
-            if (statusBaru == "")
-                return;
+            form.ShowDialog();
 
-            bool result =
-                db.UbahStatusPesanan(
-                    idPesanan,
-                    statusBaru);
-
-            if (result)
-            {
-                MessageBox.Show(
-                    "Status berhasil diubah");
-
-                LoadPesanan();
-            }
-        }
+            LoadPesanan();
+        }   
     }
 }
 
