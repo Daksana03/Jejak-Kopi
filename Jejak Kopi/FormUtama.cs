@@ -12,8 +12,8 @@ namespace Jejak_Kopi
     {
         public string data; //Sementara jadi public. Harusnya ini jadi id dari usernya dan private(?)
         public Dashboard_User FormUser;
-        public Katalog_Kopi_User FormKatalogUser; 
-
+        public Katalog_Kopi_User FormKatalogUser;
+        public Keranjang FormKeranjang;
         public FormUtama(string data)
         {
             InitializeComponent();
@@ -29,12 +29,15 @@ namespace Jejak_Kopi
         {
             FormUser = new Dashboard_User(data, this) { TopLevel = false, FormBorderStyle = FormBorderStyle.None, Dock = DockStyle.Fill, Visible = false };
             FormKatalogUser = new Katalog_Kopi_User(this, data) { TopLevel = false, FormBorderStyle = FormBorderStyle.None, Dock = DockStyle.Fill, Visible = false };
+            FormKeranjang = new Keranjang(data, this) { TopLevel = false, FormBorderStyle = FormBorderStyle.None, Dock = DockStyle.Fill, Visible = false };
 
             panel1.Controls.Add(FormUser);
             panel1.Controls.Add(FormKatalogUser);
+            panel1.Controls.Add(FormKeranjang);
 
             FormUser.Show();
             FormKatalogUser.Show();
+            FormKeranjang.Show();
         }
 
         public void BukaPanel(Form formAnak)
