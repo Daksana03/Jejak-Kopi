@@ -33,20 +33,17 @@ namespace Jejak_Kopi
         {
             try
             {
-                //string query = "SELECT * FROM kopi";
-
                 DataTable dt = dbHelper.GetKopiUser(); // simplified 'new' expression
 
-                //using var conn = new Jejak_Kopi.Database.DatabaseHelper().GetConnection(); // 'using var' is shorter
-                //conn.Open();
-                //using (NpgsqlDataAdapter da = new NpgsqlDataAdapter(query, conn))
-                //{
-                //    da.Fill(dt);
-                //}
-
                 dataGridView1.DataSource = null;
-                dataGridView1.AutoGenerateColumns = false;
                 dataGridView1.Columns.Clear();
+                dataGridView1.AutoGenerateColumns = false;
+
+                DataGridViewTextBoxColumn IdKatalog = new DataGridViewTextBoxColumn();
+                IdKatalog.DataPropertyName = "id_katalog";
+                IdKatalog.Name = "id_katalog"; // Penting: Ini nama referensi untuk baris pemanggilan kode
+                IdKatalog.Visible = false;
+                dataGridView1.Columns.Add(IdKatalog);
 
                 DataGridViewTextBoxColumn colId = new(); // simplified 'new' expressions
                 colId.DataPropertyName = "nama_menu";
@@ -63,6 +60,7 @@ namespace Jejak_Kopi
                 DataGridViewTextBoxColumn colUsername = new();
                 colUsername.DataPropertyName = "harga_menu";
                 colUsername.HeaderText = "Harga";
+                colUsername.Name = "harga_menu";
                 colUsername.Width = 52;
                 dataGridView1.Columns.Add(colUsername);
 
@@ -106,7 +104,50 @@ namespace Jejak_Kopi
 
         private void tambah_btn_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Silakan pilih biji kopi dari tabel terlebih dahulu!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            // Validasi apakah TextBox Kuantitas kosong atau bukan angka
+            if (string.IsNullOrWhiteSpace(textBox1.Text) || !int.TryParse(textBox1.Text, out int kuantitasBeli))
+            {
+                MessageBox.Show("Silakan masukkan jumlah kuantitas yang valid (angka)!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validasi memastikan jumlah beli tidak boleh 0 atau minus
+            if (kuantitasBeli <= 0)
+            {
+                MessageBox.Show("Jumlah kuantitas pembelian minimal 1!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                int idKatalog = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id_katalog"].Value);
+                int hargaMenu = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["harga_menu"].Value);
+
+                User userAktif = dbHelper.GetUserByUsername(inusern);
+                if (userAktif == null)
+                {
+                    MessageBox.Show("Sesi pengguna tidak valid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Mengirim nilai kuantitasBeli yang diambil dari textBox1 ke database
+                bool berhasil = dbHelper.TambahItemKeKeranjang(userAktif.id, idKatalog, kuantitasBeli, hargaMenu);
+
+                if (berhasil)
+                {
+                    MessageBox.Show("Biji kopi berhasil dimasukkan ke keranjang belanja!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal memproses item: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Katalog_btn_Click(object sender, EventArgs e)

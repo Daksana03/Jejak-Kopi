@@ -221,9 +221,22 @@ namespace Jejak_Kopi.Database
                 }
             }
             return dt;
- 
         }
-
+        //public DataTable GetKopiUser()
+        //{
+        //    DataTable dt = new DataTable();
+        //    using (var conn = GetConnection())
+        //    {
+        //        conn.Open();
+        //        // Menarik langsung dari tabel katalog asli agar id_katalog terambil secara valid
+        //        string query = "SELECT id_katalog, nama_menu, stok_menu, harga_menu, jenis_menu FROM katalog WHERE is_delete = false";
+        //        using (var da = new NpgsqlDataAdapter(query, conn))
+        //        {
+        //            da.Fill(dt);
+        //        }
+        //    }
+        //    return dt;
+        //}
         public DataTable GetKopiUser()
         {
             DataTable dt = new DataTable();
@@ -237,7 +250,52 @@ namespace Jejak_Kopi.Database
                 }
             }
             return dt;
+        }
 
+        public DataTable GetKeranjang(string user)
+        {
+            DataTable dt = new DataTable();
+            using (var conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT nama_biji_kopi, tipe_biji, harga_satuan, jumlah_beli, subtotal FROM v_isi_keranjang WHERE nama_pelanggan = @usn";
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@usn", user);
+                    using (var da = new NpgsqlDataAdapter(cmd))
+                    {
+                        da.Fill(dt);
+                    }
+                }
+            }
+            return dt;
+        }
+
+        public bool TambahItemKeKeranjang(int idPengguna, int idKatalog, int qty, int hargaSatuan)
+        {
+            string query = "SELECT tambah_ke_keranjang(@idUser, @idKatalog, @qty, @harga);";
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    conn.Open();
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("idUser", idPengguna);
+                        cmd.Parameters.AddWithValue("idKatalog", idKatalog);
+                        cmd.Parameters.AddWithValue("qty", qty);
+                        cmd.Parameters.AddWithValue("harga", hargaSatuan);
+
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal menambahkan ke keranjang: " + ex.Message, "Database Error");
+                return false;
+            }
         }
 
         public DataTable GetStat()
