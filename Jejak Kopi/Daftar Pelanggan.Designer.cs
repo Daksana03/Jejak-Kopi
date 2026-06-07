@@ -163,6 +163,7 @@
             Logout_btn.TabIndex = 15;
             Logout_btn.Text = "Logout";
             Logout_btn.UseVisualStyleBackColor = false;
+            Logout_btn.Click += Logout_btn_Click;
             // 
             // Laporan_btn
             // 
@@ -189,6 +190,7 @@
             Pesanan_btn.TabIndex = 13;
             Pesanan_btn.Text = "Pesanan";
             Pesanan_btn.UseVisualStyleBackColor = false;
+            Pesanan_btn.Click += Pesanan_btn_Click;
             // 
             // Daftar_pelanggan_btn
             // 
@@ -215,6 +217,7 @@
             Data_btn.TabIndex = 10;
             Data_btn.Text = "Data Biji Kopi";
             Data_btn.UseVisualStyleBackColor = false;
+            Data_btn.Click += Data_btn_Click;
             // 
             // Dashboard_btn
             // 

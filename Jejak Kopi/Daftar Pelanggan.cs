@@ -13,18 +13,24 @@ namespace Jejak_Kopi
     public partial class Daftar_Pelanggan : Form
     {
         private string inuser;
+        private FormUtamaAdmin _induk;
 
         public Daftar_Pelanggan()
         {
             InitializeComponent();
             LoadData();
+            //inuser = adminName;         // <- set the field so it exists for button handlers
+            //label2.Text = adminName;
+            //label4.Text = adminName;
         }
 
-        public Daftar_Pelanggan(string adminName) : this()
+        public Daftar_Pelanggan(string adminName, FormUtamaAdmin induk) : this()
         {
             inuser = adminName;         // <- set the field so it exists for button handlers
             label2.Text = adminName;
             label4.Text = adminName;
+            _induk = induk;
+
         }
 
         private void LoadData()
@@ -87,14 +93,30 @@ namespace Jejak_Kopi
 
         private void Dashboard_btn_Click(object sender, EventArgs e)
         {
-            Form3 mainDashboard = new Form3(inuser);
-            mainDashboard.Show();
-            this.Hide();
+            //Form3 mainDashboard = new Form3(inuser, _induk);
+            //mainDashboard.Show();
+            //this.Hide();
+            _induk.BukaPanel(_induk.FormAdmin);
         }
 
         private void data_pelanggan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Data_btn_Click(object sender, EventArgs e)
+        {
+            _induk.BukaPanel(_induk.FormDataBiji);
+        }
+
+        private void Pesanan_btn_Click(object sender, EventArgs e)
+        {
+            _induk.BukaPanel(_induk.FormPesanan);
+        }
+
+        private void Logout_btn_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }
