@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Jejak_Kopi.Database
 {
@@ -371,6 +372,26 @@ namespace Jejak_Kopi.Database
             }
             return dt;
 
+        }
+
+        public DataTable GetRiwayatUser(int idUser)
+        {
+            DataTable dt = new DataTable();
+            using(var conn = GetConnection())
+            {
+                conn.Open();
+                string query = "Select tanggal_pesanan, status_pesanan, tanggal_pengiriman from pesanan where id_pengguna = @idUser";
+                using (var cmd = new Npgsql.NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@idUser", idUser);
+                    using (var da = new NpgsqlDataAdapter(cmd))
+                    {
+                        da.Fill(dt);
+                    }
+                }
+            }
+
+            return dt;
         }
 
         public bool TambahKopi(string nama, decimal stok, int harga, string kategori)

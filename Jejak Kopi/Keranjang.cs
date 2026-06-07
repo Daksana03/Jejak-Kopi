@@ -14,6 +14,7 @@ namespace Jejak_Kopi
         public string usrn;
         private FormUtama _induk;
         private readonly DatabaseHelper dbHelper;
+
         public Keranjang(string usrn, FormUtama induk)
         {
             InitializeComponent();
@@ -136,6 +137,22 @@ namespace Jejak_Kopi
             // Buka form checkout dengan melemparkan parameter list data pilihan
             Checkout checkoutForm = new Checkout(userAktif.id, itemTerpilih, this);
             checkoutForm.ShowDialog();
+        }
+
+        private void Katalog_btn_Click(object sender, EventArgs e)
+        {
+            _induk.BukaPanel(_induk.FormKatalogUser);
+        }
+
+        private void Riwayat_btn_Click(object sender, EventArgs e)
+        {
+            _induk.BukaPanel(_induk.FormRiwayat);
+            //_induk.BukaPanel(_induk.Form)
+        }
+
+        private void Logout_btn_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

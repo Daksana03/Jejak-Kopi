@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Riwayat_Transaksi));
             panel2 = new Panel();
+            dataGridView1 = new DataGridView();
             label1 = new Label();
             panel1 = new Panel();
             label4 = new Label();
@@ -39,6 +40,8 @@
             Keranjang_btn = new Button();
             Katalog_btn = new Button();
             Dashboard_btn = new Button();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -46,10 +49,20 @@
             // panel2
             // 
             panel2.BackColor = Color.Linen;
+            panel2.Controls.Add(dataGridView1);
             panel2.Location = new Point(250, 55);
             panel2.Name = "panel2";
             panel2.Size = new Size(550, 396);
             panel2.TabIndex = 25;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(7, 68);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(531, 315);
+            dataGridView1.TabIndex = 0;
             // 
             // label1
             // 
@@ -109,6 +122,7 @@
             Logout_btn.TabIndex = 15;
             Logout_btn.Text = "Logout";
             Logout_btn.UseVisualStyleBackColor = false;
+            Logout_btn.Click += Logout_btn_Click;
             // 
             // Riwayat_btn
             // 
@@ -135,6 +149,7 @@
             Keranjang_btn.TabIndex = 11;
             Keranjang_btn.Text = "Keranjang";
             Keranjang_btn.UseVisualStyleBackColor = false;
+            Keranjang_btn.Click += Keranjang_btn_Click;
             // 
             // Katalog_btn
             // 
@@ -148,6 +163,7 @@
             Katalog_btn.TabIndex = 10;
             Katalog_btn.Text = "Katalog Kopi";
             Katalog_btn.UseVisualStyleBackColor = false;
+            Katalog_btn.Click += Katalog_btn_Click;
             // 
             // Dashboard_btn
             // 
@@ -161,6 +177,7 @@
             Dashboard_btn.TabIndex = 9;
             Dashboard_btn.Text = "Dashboard";
             Dashboard_btn.UseVisualStyleBackColor = false;
+            Dashboard_btn.Click += Dashboard_btn_Click;
             // 
             // Riwayat_Transaksi
             // 
@@ -172,6 +189,8 @@
             Controls.Add(panel1);
             Name = "Riwayat_Transaksi";
             Text = "Riwayat_Transaksi";
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -191,5 +210,6 @@
         private Button Keranjang_btn;
         private Button Katalog_btn;
         private Button Dashboard_btn;
+        private DataGridView dataGridView1;
     }
 }
