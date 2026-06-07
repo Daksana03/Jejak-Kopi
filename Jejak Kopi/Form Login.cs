@@ -104,7 +104,7 @@ namespace Jejak_Kopi
                 this.Hide();
                 regist.ShowDialog();
             }
-            this.Show();
+            
         }
 
         //protected override void OnFormClosing(FormClosingEventArgs e)

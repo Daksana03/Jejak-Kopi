@@ -71,6 +71,7 @@
             button1.TabIndex = 16;
             button1.Text = "Check Out";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // dataGridView1
             // 

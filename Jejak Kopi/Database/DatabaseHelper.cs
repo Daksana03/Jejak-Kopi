@@ -222,21 +222,80 @@ namespace Jejak_Kopi.Database
             }
             return dt;
         }
-        //public DataTable GetKopiUser()
+
+        //public bool SimpanAlamatCheckout(int idPengguna, string jalan, string kecamatan, string kabupaten)
         //{
-        //    DataTable dt = new DataTable();
-        //    using (var conn = GetConnection())
+
+        //    string query = "SELECT tambah_ke_keranjang(@idUser, @idKatalog, @qty, @harga);";
+        //    try
         //    {
-        //        conn.Open();
-        //        // Menarik langsung dari tabel katalog asli agar id_katalog terambil secara valid
-        //        string query = "SELECT id_katalog, nama_menu, stok_menu, harga_menu, jenis_menu FROM katalog WHERE is_delete = false";
-        //        using (var da = new NpgsqlDataAdapter(query, conn))
+        //        using (var conn = GetConnection())
         //        {
-        //            da.Fill(dt);
+        //            conn.Open();
+        //            using (var cmd = new NpgsqlCommand(query, conn))
+        //            {
+        //                cmd.Parameters.AddWithValue("idUser", idPengguna);
+        //                cmd.Parameters.AddWithValue("idKatalog", idKatalog);
+        //                cmd.Parameters.AddWithValue("qty", qty);
+        //                cmd.Parameters.AddWithValue("harga", hargaSatuan);
+
+        //                cmd.ExecuteNonQuery();
+        //                return true;
+        //            }
         //        }
         //    }
-        //    return dt;
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Gagal menambahkan ke keranjang: " + ex.Message, "Database Error");
+        //        return false;
+        //    }
         //}
+
+        public DataTable GetKeranjangByUsername(string username)
+        {
+            DataTable dt = new DataTable();
+            using (var conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT id_keranjang, id_katalog, nama_biji_kopi, tipe_biji, harga_satuan, jumlah_beli, subtotal FROM v_isi_keranjang WHERE nama_pelanggan = @username";
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+                    using (var da = new NpgsqlDataAdapter(cmd))
+                    {
+                        da.Fill(dt);
+                    }
+                }
+            }
+            return dt;
+        }
+
+        public bool ProsesCheckoutPilihan(int idPengguna, int idMetode, List<int> listIdKeranjang)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    conn.Open();
+                    string query = "CALL sp_checkout_pilihan(@idPengguna, @idMetode, @arrayKeranjang)";
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@idPengguna", idPengguna);
+                        cmd.Parameters.AddWithValue("@idMetode", idMetode);
+                        cmd.Parameters.AddWithValue("@arrayKeranjang", listIdKeranjang.ToArray());
+
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Checkout gagal: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
         public DataTable GetKopiUser()
         {
             DataTable dt = new DataTable();

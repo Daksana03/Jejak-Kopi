@@ -142,6 +142,7 @@ namespace Jejak_Kopi
                 if (berhasil)
                 {
                     MessageBox.Show("Biji kopi berhasil dimasukkan ke keranjang belanja!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    _induk.FormKeranjang.LoadKeranjang();
                 }
             }
             catch (Exception ex)

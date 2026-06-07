@@ -56,7 +56,7 @@ namespace Jejak_Kopi
         {
             //Form1 login = new Form1();
             //login.ShowDialog();
-            this.Close();
+            Application.Restart();
         }
 
         private void Register2_Click_1(object sender, EventArgs e)

@@ -22,29 +22,41 @@ namespace Jejak_Kopi
             dbHelper = new DatabaseHelper();
             LoadKeranjang();
         }
-        private void LoadKeranjang()
+        public void LoadKeranjang()
         {
             try
             {
-                // Contoh ID Pelanggan yang sedang aktif login (sesuaikan dengan sistem session Anda)
-                string user = usrn;
-
-                DataTable dt = dbHelper.GetKeranjang(user);
+                DataTable dt = dbHelper.GetKeranjangByUsername(usrn);
 
                 dataGridView1.DataSource = null;
-                dataGridView1.AutoGenerateColumns = false;
                 dataGridView1.Columns.Clear();
+                dataGridView1.AutoGenerateColumns = false;
 
+                // 1. Kolom Pilihan Checkbox (User bisa memilih item)
+                DataGridViewCheckBoxColumn colCheck = new DataGridViewCheckBoxColumn();
+                colCheck.Name = "pilih_item";
+                colCheck.HeaderText = "Pilih";
+                colCheck.Width = 40;
+                dataGridView1.Columns.Add(colCheck);
+
+                // 2. Kolom ID Keranjang (Disembunyikan)
+                DataGridViewTextBoxColumn colIdKrz = new DataGridViewTextBoxColumn();
+                colIdKrz.DataPropertyName = "id_keranjang";
+                colIdKrz.Name = "id_keranjang";
+                colIdKrz.Visible = false;
+                dataGridView1.Columns.Add(colIdKrz);
+
+                // 3. Kolom Info Produk
                 DataGridViewTextBoxColumn colNama = new DataGridViewTextBoxColumn();
                 colNama.DataPropertyName = "nama_biji_kopi";
                 colNama.HeaderText = "Biji Kopi";
-                colNama.Width = 160;
+                colNama.Width = 140;
                 dataGridView1.Columns.Add(colNama);
 
                 DataGridViewTextBoxColumn colJenis = new DataGridViewTextBoxColumn();
                 colJenis.DataPropertyName = "tipe_biji";
                 colJenis.HeaderText = "Jenis";
-                colJenis.Width = 100;
+                colJenis.Width = 90;
                 dataGridView1.Columns.Add(colJenis);
 
                 DataGridViewTextBoxColumn colHarga = new DataGridViewTextBoxColumn();
@@ -63,13 +75,18 @@ namespace Jejak_Kopi
                 DataGridViewTextBoxColumn colSubtotal = new DataGridViewTextBoxColumn();
                 colSubtotal.DataPropertyName = "subtotal";
                 colSubtotal.HeaderText = "Subtotal";
-                colSubtotal.Width = 100;
+                colSubtotal.Width = 90;
                 colSubtotal.DefaultCellStyle.Format = "N0";
                 dataGridView1.Columns.Add(colSubtotal);
 
                 dataGridView1.DataSource = dt;
-                dataGridView1.ReadOnly = true;
-                dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                dataGridView1.ReadOnly = false;
+
+                // Set agar hanya kolom Checkbox yang bisa diedit nilainya oleh user
+                foreach (DataGridViewColumn col in dataGridView1.Columns)
+                {
+                    if (col.Name != "pilih_item") col.ReadOnly = true;
+                }
             }
             catch (Exception ex)
             {
@@ -89,6 +106,36 @@ namespace Jejak_Kopi
                 //_induk.BukaPanel(new Dashboard_User(inusern, _induk));
                 _induk.BukaPanel(_induk.FormUser);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dataGridView1.EndEdit(); // Hentikan edit grid agar status check terbaru tersimpan
+
+            List<int> itemTerpilih = new List<int>();
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells["pilih_item"].Value != null && (bool)row.Cells["pilih_item"].Value == true)
+                {
+                    int idKrz = Convert.ToInt32(row.Cells["id_keranjang"].Value);
+                    itemTerpilih.Add(idKrz);
+                }
+            }
+
+            if (itemTerpilih.Count == 0)
+            {
+                MessageBox.Show("Silakan centang item di keranjang yang ingin Anda checkout terlebih dahulu!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Dapatkan info user id dari username session
+            User userAktif = dbHelper.GetUserByUsername(usrn);
+            if (userAktif == null) return;
+
+            // Buka form checkout dengan melemparkan parameter list data pilihan
+            Checkout checkoutForm = new Checkout(userAktif.id, itemTerpilih, this);
+            checkoutForm.ShowDialog();
         }
     }
 }
