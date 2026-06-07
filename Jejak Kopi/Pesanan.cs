@@ -11,11 +11,13 @@ namespace Jejak_Kopi
 {
     public partial class Pesanan : Form
     {
+        private FormUtamaAdmin _induk;
         private DatabaseHelper db = new DatabaseHelper();
-        public Pesanan()
+        public Pesanan(FormUtamaAdmin induk)
         {
             InitializeComponent();
             LoadPesanan();
+            _induk = induk;
         }
 
         private void LoadPesanan()
@@ -53,7 +55,27 @@ namespace Jejak_Kopi
             form.ShowDialog();
 
             LoadPesanan();
-        }   
+        }
+
+        private void Dashboard_btn_Click(object sender, EventArgs e)
+        {
+            _induk.BukaPanel(_induk.FormAdmin);
+        }
+
+        private void Data_btn_Click(object sender, EventArgs e)
+        {
+            _induk.BukaPanel(_induk.FormDataBiji);
+        }
+
+        private void Daftar_pelanggan_btn_Click(object sender, EventArgs e)
+        {
+            _induk.BukaPanel(_induk.FormDaftarPelanggan);
+        }
+
+        private void Logout_btn_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
     }
 }
 

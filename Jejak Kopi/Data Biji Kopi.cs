@@ -13,8 +13,9 @@ namespace Jejak_Kopi
     {
         private readonly string adminName;
         private readonly DatabaseHelper dbHelper;
+        private FormUtamaAdmin _induk;
 
-        public Data_Biji_Kopi(string adminName)
+        public Data_Biji_Kopi(string adminName, FormUtamaAdmin induk)
         {
             InitializeComponent();
             this.adminName = adminName;
@@ -25,6 +26,7 @@ namespace Jejak_Kopi
 
             dbHelper = new DatabaseHelper();
             LoadDataKopi();   // isi grid saat form dibuka
+            _induk = induk;
         }
 
         // Mengisi DataGridView dengan data dari database
@@ -86,7 +88,7 @@ namespace Jejak_Kopi
         // Event handler tombol Daftar Pelanggan (sudah ada)
         private void Daftar_pelanggan_btn_Click(object sender, EventArgs e)
         {
-            Daftar_Pelanggan daftar = new Daftar_Pelanggan(this.adminName);
+            Daftar_Pelanggan daftar = new Daftar_Pelanggan(this.adminName, _induk);
             daftar.Show();
             this.Hide();
         }
@@ -141,9 +143,25 @@ namespace Jejak_Kopi
 
         private void Dashboard_btn_Click(object sender, EventArgs e)
         {
-            Form3 mainDashboard = new Form3(this.adminName);
-            mainDashboard.Show();
-            this.Hide();
+            //Form3 mainDashboard = new Form3(this.adminName);
+            //mainDashboard.Show();
+            //this.Hide();
+            _induk.BukaPanel(_induk.FormAdmin);
+        }
+
+        private void Daftar_pelanggan_btn_Click_1(object sender, EventArgs e)
+        {
+            _induk.BukaPanel(_induk.FormDaftarPelanggan);
+        }
+
+        private void Pesanan_btn_Click(object sender, EventArgs e)
+        {
+            _induk.BukaPanel(_induk.FormPesanan);
+        }
+
+        private void Logout_btn_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

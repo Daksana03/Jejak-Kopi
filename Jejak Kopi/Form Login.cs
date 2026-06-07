@@ -76,8 +76,10 @@ namespace Jejak_Kopi
 
             if (status && is_admin)
             {
-                Form3 mainDashboard = new Form3(inusern);
-                mainDashboard.Show();
+                //Form3 mainDashboard = new Form3(inusern);
+                //mainDashboard.Show();
+                FormUtamaAdmin FormAdmin = new FormUtamaAdmin(inusern);
+                FormAdmin.Show();
                 this.Hide();
             }
             else if (status && is_admin == false)

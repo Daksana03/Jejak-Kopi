@@ -114,7 +114,7 @@
             panel1.Controls.Add(Daftar_pelanggan_btn);
             panel1.Controls.Add(Data_btn);
             panel1.Controls.Add(Dashboard_btn);
-            panel1.Location = new Point(1, -2);
+            panel1.Location = new Point(1, -4);
             panel1.Name = "panel1";
             panel1.Size = new Size(250, 451);
             panel1.TabIndex = 3;
@@ -146,12 +146,13 @@
             Logout_btn.BackgroundImageLayout = ImageLayout.Stretch;
             Logout_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Logout_btn.ForeColor = SystemColors.ControlLightLight;
-            Logout_btn.Location = new Point(-3, 396);
+            Logout_btn.Location = new Point(-3, 398);
             Logout_btn.Name = "Logout_btn";
             Logout_btn.Size = new Size(253, 56);
             Logout_btn.TabIndex = 15;
             Logout_btn.Text = "Logout";
             Logout_btn.UseVisualStyleBackColor = false;
+            Logout_btn.Click += Logout_btn_Click;
             // 
             // Laporan_btn
             // 
@@ -159,7 +160,7 @@
             Laporan_btn.BackgroundImageLayout = ImageLayout.Stretch;
             Laporan_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Laporan_btn.ForeColor = SystemColors.ControlLightLight;
-            Laporan_btn.Location = new Point(-3, 227);
+            Laporan_btn.Location = new Point(-3, 223);
             Laporan_btn.Name = "Laporan_btn";
             Laporan_btn.Size = new Size(253, 40);
             Laporan_btn.TabIndex = 14;
@@ -172,7 +173,7 @@
             Pesanan_btn.BackgroundImageLayout = ImageLayout.Stretch;
             Pesanan_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Pesanan_btn.ForeColor = SystemColors.ControlLightLight;
-            Pesanan_btn.Location = new Point(-3, 189);
+            Pesanan_btn.Location = new Point(-3, 187);
             Pesanan_btn.Name = "Pesanan_btn";
             Pesanan_btn.Size = new Size(253, 40);
             Pesanan_btn.TabIndex = 13;
@@ -185,12 +186,13 @@
             Daftar_pelanggan_btn.BackgroundImageLayout = ImageLayout.Stretch;
             Daftar_pelanggan_btn.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Daftar_pelanggan_btn.ForeColor = SystemColors.ControlLightLight;
-            Daftar_pelanggan_btn.Location = new Point(-3, 155);
+            Daftar_pelanggan_btn.Location = new Point(-3, 151);
             Daftar_pelanggan_btn.Name = "Daftar_pelanggan_btn";
             Daftar_pelanggan_btn.Size = new Size(253, 40);
             Daftar_pelanggan_btn.TabIndex = 12;
             Daftar_pelanggan_btn.Text = "Daftar Pelanggan";
             Daftar_pelanggan_btn.UseVisualStyleBackColor = false;
+            Daftar_pelanggan_btn.Click += Daftar_pelanggan_btn_Click;
             // 
             // Data_btn
             // 
@@ -204,6 +206,7 @@
             Data_btn.TabIndex = 10;
             Data_btn.Text = "Data Biji Kopi";
             Data_btn.UseVisualStyleBackColor = false;
+            Data_btn.Click += Data_btn_Click;
             // 
             // Dashboard_btn
             // 
@@ -217,11 +220,13 @@
             Dashboard_btn.TabIndex = 9;
             Dashboard_btn.Text = "Dashboard";
             Dashboard_btn.UseVisualStyleBackColor = false;
+            Dashboard_btn.Click += Dashboard_btn_Click;
             // 
             // Pesanan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Bisque;
             ClientSize = new Size(800, 450);
             Controls.Add(status_btn);
             Controls.Add(label1);

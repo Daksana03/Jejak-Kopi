@@ -12,10 +12,10 @@ namespace Jejak_Kopi
 {
     public partial class Form3 : Form
     {
-        
+        private FormUtamaAdmin _induk;
         private readonly DatabaseHelper dbHelper;
         public string adminName;
-        public Form3(string adminName)
+        public Form3(string adminName, FormUtamaAdmin induk)
         {
             InitializeComponent();
             label2.Text = adminName;
@@ -24,6 +24,7 @@ namespace Jejak_Kopi
             dbHelper = new DatabaseHelper();
             LoadStat();
             this.adminName = adminName;
+            _induk = induk;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -38,9 +39,11 @@ namespace Jejak_Kopi
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Daftar_Pelanggan daftar = new Daftar_Pelanggan(adminName);
-            daftar.Show();
-            this.Hide();
+            //Daftar_Pelanggan daftar = new Daftar_Pelanggan(adminName);
+            //daftar.Show();
+            //this.Hide();
+            _induk.BukaPanel(_induk.FormDaftarPelanggan);
+
         }
 
         private void LoadStat()
@@ -101,23 +104,26 @@ namespace Jejak_Kopi
 
         private void Logout_btn_Click1(object sender, EventArgs e)
         {
-            Form1 login = new Form1();
-            login.Show();
-            this.Close();
+            //Form1 login = new Form1();
+            //login.Show();
+            //this.Close();
+            Application.Restart();
         }
 
         private void Data_btn_Click(object sender, EventArgs e)
         {
-            Data_Biji_Kopi kopi = new Data_Biji_Kopi(adminName);
-            kopi.Show();
-            this.Hide();
+            //Data_Biji_Kopi kopi = new Data_Biji_Kopi(adminName,_induk);
+            //kopi.Show();
+            //this.Hide();
+            _induk.BukaPanel(_induk.FormDataBiji);
         }
 
         private void Pesanan_btn_Click(object sender, EventArgs e)
         {
-            Pesanan pesanan = new Pesanan();
-            pesanan.Show();
-            this.Hide();
+            //Pesanan pesanan = new Pesanan();
+            //pesanan.Show();
+            //this.Hide();
+            _induk.BukaPanel(_induk.FormPesanan);
         }
     }
 }

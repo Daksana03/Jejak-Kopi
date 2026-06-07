@@ -180,6 +180,7 @@
             Logout_btn.TabIndex = 15;
             Logout_btn.Text = "Logout";
             Logout_btn.UseVisualStyleBackColor = false;
+            Logout_btn.Click += Logout_btn_Click;
             // 
             // Laporan_btn
             // 
@@ -206,6 +207,7 @@
             Pesanan_btn.TabIndex = 13;
             Pesanan_btn.Text = "Pesanan";
             Pesanan_btn.UseVisualStyleBackColor = false;
+            Pesanan_btn.Click += Pesanan_btn_Click;
             // 
             // Daftar_pelanggan_btn
             // 
@@ -219,6 +221,7 @@
             Daftar_pelanggan_btn.TabIndex = 12;
             Daftar_pelanggan_btn.Text = "Daftar Pelanggan";
             Daftar_pelanggan_btn.UseVisualStyleBackColor = false;
+            Daftar_pelanggan_btn.Click += Daftar_pelanggan_btn_Click_1;
             // 
             // Data_btn
             // 
@@ -251,6 +254,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Bisque;
             ClientSize = new Size(800, 450);
             Controls.Add(label2);
             Controls.Add(panel2);
