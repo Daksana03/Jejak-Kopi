@@ -533,5 +533,29 @@ namespace Jejak_Kopi.Database
             return true;
         }
 
+        public DataTable GetLaporanPesananSelesai()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var conn = GetConnection()) // Menggunakan method koneksi bawaan Anda
+                {
+                    conn.Open();
+                    // Panggil nama VIEW yang sudah dibuat di database
+                    string query = "SELECT * FROM v_pesanan_sukses_except ORDER BY id_pesanan DESC;";
+
+                    using (var cmd = new Npgsql.NpgsqlCommand(query, conn))
+                    using (var da = new Npgsql.NpgsqlDataAdapter(cmd))
+                    {
+                        da.Fill(dt);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Gagal mengambil data laporan: " + ex.Message, "Database Error");
+            }
+            return dt;
+        }
     }
 }

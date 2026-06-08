@@ -125,5 +125,10 @@ namespace Jejak_Kopi
             //this.Hide();
             _induk.BukaPanel(_induk.FormPesanan);
         }
+
+        private void Laporan_btn_Click(object sender, EventArgs e)
+        {
+            _induk.BukaPanel(_induk.FormLaporan);
+        }
     }
 }

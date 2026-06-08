@@ -15,6 +15,7 @@ namespace Jejak_Kopi
         public Daftar_Pelanggan FormDaftarPelanggan;
         public Data_Biji_Kopi FormDataBiji;
         public Pesanan FormPesanan;
+        public Laporan FormLaporan;
 
         public FormUtamaAdmin(string data)
         {
@@ -46,16 +47,19 @@ namespace Jejak_Kopi
             FormDaftarPelanggan = new Daftar_Pelanggan(data, this) { TopLevel = false, FormBorderStyle = FormBorderStyle.None, Dock = DockStyle.Fill, Visible = false };
             FormDataBiji = new Data_Biji_Kopi(data, this) { TopLevel = false, FormBorderStyle = FormBorderStyle.None, Dock = DockStyle.Fill, Visible = false };
             FormPesanan = new Pesanan(this) { TopLevel = false, FormBorderStyle = FormBorderStyle.None, Dock = DockStyle.Fill, Visible = false };
+            FormLaporan = new Laporan(data, this) { TopLevel = false, FormBorderStyle = FormBorderStyle.None, Dock = DockStyle.Fill, Visible = false };
 
             panel1.Controls.Add(FormAdmin);
             panel1.Controls.Add(FormDaftarPelanggan);
             panel1.Controls.Add(FormDataBiji);
             panel1.Controls.Add(FormPesanan);
+            panel1.Controls.Add(FormLaporan);
             
             FormAdmin.Show();
             FormDaftarPelanggan.Show();
             FormDataBiji.Show();
             FormPesanan.Show();
+            FormLaporan.Show();
         }
 
         public void BukaPanel(Form formAnak)
