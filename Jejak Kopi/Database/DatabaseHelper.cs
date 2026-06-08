@@ -312,6 +312,37 @@ namespace Jejak_Kopi.Database
             return dt;
         }
 
+        public DataRow GetTotalBelanjaPengguna(string username)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var conn = GetConnection()) // Menggunakan method koneksi bawaan Anda
+                {
+                    conn.Open();
+                    string query = "SELECT total_pembelian, total_kopi_dibeli FROM v_total_belanja_pengguna WHERE username = @username";
+                    using (var cmd = new Npgsql.NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@username", username);
+                        using (var da = new Npgsql.NpgsqlDataAdapter(cmd))
+                        {
+                            da.Fill(dt);
+                        }
+                    }
+                }
+
+                if (dt.Rows.Count > 0)
+                {
+                    return dt.Rows[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Gagal memuat ringkasan belanja: " + ex.Message, "Database Error");
+            }
+            return null;
+        }
+
         public DataTable GetKeranjang(string user)
         {
             DataTable dt = new DataTable();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Jejak_Kopi.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Jejak_Kopi
     {
         public string usern;
         private FormUtama _induk;
+        private DatabaseHelper dbHelper;
         public Dashboard_User(string usern, FormUtama induk)
         {
             InitializeComponent();
@@ -20,7 +22,8 @@ namespace Jejak_Kopi
             label4.Text = usern;
 
             this.usern = usern;
-
+            dbHelper = new DatabaseHelper();
+            MuatRingkasanBelanja();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -63,6 +66,25 @@ namespace Jejak_Kopi
             {
                 //_induk.BukaPanel(new Katalog_Kopi_User(_induk ,usern));
                 _induk.BukaPanel(_induk.FormKatalogUser);
+            }
+        }
+        public void MuatRingkasanBelanja()
+        {
+            DataRow rowBelanja = dbHelper.GetTotalBelanjaPengguna(this.usern);
+
+            if (rowBelanja != null)
+            {
+                long totalPembelian = Convert.ToInt64(rowBelanja["total_pembelian"]);
+                long totalKopiDibeli = Convert.ToInt64(rowBelanja["total_kopi_dibeli"]);
+
+                // Set nilai ke label dengan format mata uang rupiah tanpa desimal
+                label5.Text = "Rp " + totalPembelian.ToString("N0");
+                label7.Text = totalKopiDibeli.ToString() + " Kg";
+            }
+            else
+            {
+                label5.Text = "Rp 0";
+                label7.Text = "0 Pack/Pcs";
             }
         }
 
