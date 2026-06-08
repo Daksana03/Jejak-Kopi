@@ -37,7 +37,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(97, 25);
+            label3.Location = new Point(107, 25);
             label3.Name = "label3";
             label3.Size = new Size(200, 34);
             label3.TabIndex = 12;
@@ -46,7 +46,7 @@
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(118, 91);
+            comboBox2.Location = new Point(129, 93);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(151, 28);
             comboBox2.TabIndex = 14;
