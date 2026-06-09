@@ -104,6 +104,7 @@
             label7.Size = new Size(215, 42);
             label7.TabIndex = 18;
             label7.Text = "Lorem Ipsum";
+            label7.Click += label7_Click_1;
             // 
             // panel3
             // 

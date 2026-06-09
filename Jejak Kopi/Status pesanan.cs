@@ -19,10 +19,10 @@ namespace Jejak_Kopi
             InitializeComponent();
             idPesanan = id;
 
-            comboBox2.Items.Add("Diproses");
-            comboBox2.Items.Add("Dikirim");
-            comboBox2.Items.Add("Selesai");
-            comboBox2.Items.Add("Dibatalkan");
+            comboBox2.Items.Add("diproses");
+            comboBox2.Items.Add("dikirim");
+            comboBox2.Items.Add("selesai");
+            comboBox2.Items.Add("dibatalkan");
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)

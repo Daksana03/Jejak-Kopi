@@ -127,5 +127,10 @@ namespace Jejak_Kopi
         {
             _induk.BukaPanel(_induk.FormRiwayat);
         }
+
+        private void label7_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
