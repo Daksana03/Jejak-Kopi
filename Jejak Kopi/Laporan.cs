@@ -90,5 +90,14 @@ namespace Jejak_Kopi
         {
 
         }
+
+        private void Dashboard_btn_Click(object sender, EventArgs e)
+        {
+            if (_induk != null)
+            {
+                //_induk.BukaPanel(new Dashboard_User(inusern, _induk));
+                _induk.BukaPanel(_induk.FormAdmin);
+            }
+        }
     }
 }

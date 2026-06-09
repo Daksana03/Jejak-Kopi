@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Reflection.Emit;
 using System.Text;
 using System.Windows.Forms;
 
@@ -11,13 +12,16 @@ namespace Jejak_Kopi
 {
     public partial class Pesanan : Form
     {
+        private string _adminName;
         private FormUtamaAdmin _induk;
         private DatabaseHelper db = new DatabaseHelper();
-        public Pesanan(FormUtamaAdmin induk)
+        public Pesanan(string adminName, FormUtamaAdmin induk)
         {
             InitializeComponent();
             LoadPesanan();
-            _induk = induk;
+            label4.Text = adminName;
+            this._adminName = adminName;
+            this._induk = induk;
         }
 
         private void LoadPesanan()

@@ -46,7 +46,7 @@ namespace Jejak_Kopi
             FormAdmin = new Form3(data, this) { TopLevel = false, FormBorderStyle = FormBorderStyle.None, Dock = DockStyle.Fill, Visible = false };
             FormDaftarPelanggan = new Daftar_Pelanggan(data, this) { TopLevel = false, FormBorderStyle = FormBorderStyle.None, Dock = DockStyle.Fill, Visible = false };
             FormDataBiji = new Data_Biji_Kopi(data, this) { TopLevel = false, FormBorderStyle = FormBorderStyle.None, Dock = DockStyle.Fill, Visible = false };
-            FormPesanan = new Pesanan(this) { TopLevel = false, FormBorderStyle = FormBorderStyle.None, Dock = DockStyle.Fill, Visible = false };
+            FormPesanan = new Pesanan(data,this) { TopLevel = false, FormBorderStyle = FormBorderStyle.None, Dock = DockStyle.Fill, Visible = false };
             FormLaporan = new Laporan(data, this) { TopLevel = false, FormBorderStyle = FormBorderStyle.None, Dock = DockStyle.Fill, Visible = false };
 
             panel1.Controls.Add(FormAdmin);
