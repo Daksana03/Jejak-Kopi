@@ -224,9 +224,32 @@ namespace Jejak_Kopi.Database
             return dt;
         }
 
-        //public bool SimpanAlamatCheckout(int idPengguna, string jalan, string kecamatan, string kabupaten)
-        //{
+        public bool SimpanAlamat(int idPengguna,string nojalan, string jalan, string kecamatan, string kabupaten)
+        {
+            try
+            {
+                using var conn = GetConnection();
+                conn.Open();
 
+                // Memanggil stored procedure berantai dari PostgreSQL
+                string query = "CALL insert_alamat(@idUser, @no, @jalan, @kecamatan, @kabupaten)";
+
+                using var cmd = new NpgsqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@idUser", idPengguna);
+                cmd.Parameters.AddWithValue("@no", nojalan);
+                cmd.Parameters.AddWithValue("@jalan", jalan);
+                cmd.Parameters.AddWithValue("@kecamatan", kecamatan);
+                cmd.Parameters.AddWithValue("@kabupaten", kabupaten);
+
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Gagal menyimpan alamat: " + ex.Message, "Database Error");
+                return false;
+            }
+        }
         //    string query = "SELECT tambah_ke_keranjang(@idUser, @idKatalog, @qty, @harga);";
         //    try
         //    {
@@ -240,17 +263,17 @@ namespace Jejak_Kopi.Database
         //                cmd.Parameters.AddWithValue("qty", qty);
         //                cmd.Parameters.AddWithValue("harga", hargaSatuan);
 
-        //                cmd.ExecuteNonQuery();
-        //                return true;
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Gagal menambahkan ke keranjang: " + ex.Message, "Database Error");
-        //        return false;
-        //    }
-        //}
+            //                cmd.ExecuteNonQuery();
+            //                return true;
+            //            }
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show("Gagal menambahkan ke keranjang: " + ex.Message, "Database Error");
+            //        return false;
+            //    }
+            //}
 
         public DataTable GetKeranjangByUsername(string username)
         {
