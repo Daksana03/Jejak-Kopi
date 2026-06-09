@@ -160,5 +160,10 @@ namespace Jejak_Kopi
         {
             _induk.BukaPanel(_induk.FormRiwayat);
         }
+
+        private void Keranjang_btn_Click(object sender, EventArgs e)
+        {
+            _induk.BukaPanel(_induk.FormKeranjang);
+        }
     }
 }

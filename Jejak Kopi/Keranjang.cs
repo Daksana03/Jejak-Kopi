@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Reflection.Emit;
 using System.Text;
 using System.Windows.Forms;
 
@@ -20,6 +21,7 @@ namespace Jejak_Kopi
             InitializeComponent();
             _induk = induk;
             this.usrn = usrn;
+            label4.Text = usrn;
             dbHelper = new DatabaseHelper();
             LoadKeranjang();
         }

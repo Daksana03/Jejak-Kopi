@@ -80,6 +80,11 @@ namespace Jejak_Kopi
         {
             Application.Restart();
         }
+
+        private void Laporan_btn_Click(object sender, EventArgs e)
+        {
+            _induk.BukaPanel(_induk.FormLaporan);
+        }
     }
 }
 

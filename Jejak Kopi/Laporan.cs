@@ -93,11 +93,22 @@ namespace Jejak_Kopi
 
         private void Dashboard_btn_Click(object sender, EventArgs e)
         {
-            if (_induk != null)
-            {
-                //_induk.BukaPanel(new Dashboard_User(inusern, _induk));
-                _induk.BukaPanel(_induk.FormAdmin);
-            }
+            _induk.BukaPanel(_induk.FormAdmin);
+        }
+
+        private void Data_btn_Click(object sender, EventArgs e)
+        {
+            _induk.BukaPanel(_induk.FormDataBiji);
+        }
+
+        private void Daftar_pelanggan_btn_Click(object sender, EventArgs e)
+        {
+            _induk.BukaPanel(_induk.FormDaftarPelanggan);
+        }
+
+        private void Pesanan_btn_Click(object sender, EventArgs e)
+        {
+            _induk.BukaPanel(_induk.FormPesanan);
         }
     }
 }

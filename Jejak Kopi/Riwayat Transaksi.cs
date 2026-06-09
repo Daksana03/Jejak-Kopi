@@ -21,6 +21,7 @@ namespace Jejak_Kopi
             InitializeComponent();
             dbHelper = new DatabaseHelper();
             this.usern = usern;
+            label4.Text = usern;
             _induk = induk;
             LoadRiwayat();
         }
@@ -42,19 +43,19 @@ namespace Jejak_Kopi
                 dataGridView1.AutoGenerateColumns = false;
 
                 DataGridViewTextBoxColumn coltanggalpesan = new DataGridViewTextBoxColumn();
-                coltanggalpesan.Name = "tanggal_pesanan";
+                coltanggalpesan.DataPropertyName = "tanggal_pesanan";
                 coltanggalpesan.HeaderText = "Tanggal Pesan";
                 coltanggalpesan.Width = 100;
                 dataGridView1.Columns.Add(coltanggalpesan);
 
                 DataGridViewTextBoxColumn colstatus = new DataGridViewTextBoxColumn();
-                colstatus.Name = "status_pesanan";
+                colstatus.DataPropertyName = "status_pesanan";
                 colstatus.HeaderText = "Status Pesanan";
                 colstatus.Width = 100;
                 dataGridView1.Columns.Add(colstatus);
 
                 DataGridViewTextBoxColumn coltanggalpengiriman = new DataGridViewTextBoxColumn();
-                coltanggalpengiriman.Name = "tanggal_pengiriman";
+                coltanggalpengiriman.DataPropertyName = "tanggal_pengiriman";
                 coltanggalpengiriman.HeaderText = "Tanggal Pengiriman";
                 coltanggalpengiriman.Width = 100;
                 dataGridView1.Columns.Add(coltanggalpengiriman);

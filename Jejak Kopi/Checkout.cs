@@ -82,9 +82,9 @@ namespace Jejak_Kopi
             try
             {
                 // 4. Proses Insert/Update Alamat Pengiriman ke database terlebih dahulu
-                //bool alamatTersimpan = dbHelper.SimpanAlamatPengiriman(_idPengguna, inputJalan, inputKecamatan, inputKabupaten);
+                bool alamatTersimpan = dbHelper.SimpanAlamat(_idPengguna, inputNoJalan, inputJalan, inputKecamatan, inputKabupaten);
 
-                //if (!alamatTersimpan) return; // Jika gagal menyimpan alamat, hentikan proses transaksi
+                if (!alamatTersimpan) return; // Jika gagal menyimpan alamat, hentikan proses transaksi
 
                 // 5. Jika sukses, ambil ID Metode Transaksi dari ComboBox lalu checkout item pilihan
                 int idMetodePembayaran = Convert.ToInt32(comboBox1.SelectedValue);
